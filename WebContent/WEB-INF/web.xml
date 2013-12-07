@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <servlet>
+    <description></description>
+    <display-name>roleSelect</display-name>
+    <servlet-name>roleSelect</servlet-name>
+    <servlet-class>goair.servlets.general.roleSelect</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>roleSelect</servlet-name>
+    <url-pattern>/View/GeneralView/roleSelect</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>logIn</display-name>
+    <servlet-name>logIn</servlet-name>
+    <servlet-class>goair.servlets.general.logIn</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logIn</servlet-name>
+    <url-pattern>/View/GeneralView/logIn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SignUp</display-name>
+    <servlet-name>SignUp</servlet-name>
+    <servlet-class>goair.servlets.customer.SignUp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignUp</servlet-name>
+    <url-pattern>/View/CustomerView/SignUp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchCustomer</display-name>
+    <servlet-name>searchCustomer</servlet-name>
+    <servlet-class>goair.servlets.customer.searchCustomer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchCustomer</servlet-name>
+    <url-pattern>/View/CustomerView/searchCustomer</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteCustomer</display-name>
+    <servlet-name>deleteCustomer</servlet-name>
+    <servlet-class>goair.servlets.customer.deleteCustomer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteCustomer</servlet-name>
+    <url-pattern>/View/CustomerView/deleteCustomer</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddEmployee</display-name>
+    <servlet-name>addemployee</servlet-name>
+    <servlet-class>goair.servlets.employee.addemployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addemployee</servlet-name>
+    <url-pattern>/View/EmployeeView/addemployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>viewAllCustomers</display-name>
+    <servlet-name>viewAllCustomers</servlet-name>
+    <servlet-class>goair.servlets.customer.viewAllCustomers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewAllCustomers</servlet-name>
+    <url-pattern>/View/CustomerView/viewAllCustomers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>editDeleteCustomer</display-name>
+    <servlet-name>editDeleteCustomer</servlet-name>
+    <servlet-class>goair.servlets.customer.editDeleteCustomer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editDeleteCustomer</servlet-name>
+    <url-pattern>/View/CustomerView/editDeleteCustomer</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddFlight</display-name>
+    <servlet-name>AddFlight</servlet-name>
+    <servlet-class>goair.servlets.flight.AddFlight</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddFlight</servlet-name>
+    <url-pattern>/View/FlightView/AddFlight</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateFlight</display-name>
+    <servlet-name>UpdateFlight</servlet-name>
+    <servlet-class>goair.servlets.flight.UpdateFlight</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateFlight</servlet-name>
+    <url-pattern>/View/FlightView/UpdateFlight</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchReservation</display-name>
+    <servlet-name>SearchReservation</servlet-name>
+    <servlet-class>goair.servlets.reservation.SearchReservation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchReservation</servlet-name>
+    <url-pattern>/View/ReservationView/SearchReservation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchEmployee</display-name>
+    <servlet-name>searchemployee</servlet-name>
+    <servlet-class>goair.servlets.employee.searchemployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchemployee</servlet-name>
+    <url-pattern>/View/EmployeeView/searchemployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteEmployee</display-name>
+    <servlet-name>deleteemployee</servlet-name>
+    <servlet-class>goair.servlets.employee.deleteemployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteemployee</servlet-name>
+    <url-pattern>/View/EmployeeView/deleteemployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updateCustomer</display-name>
+    <servlet-name>updateCustomer</servlet-name>
+    <servlet-class>goair.servlets.customer.updateCustomer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateCustomer</servlet-name>
+    <url-pattern>/View/CustomerView/updateCustomer</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FindFlight</display-name>
+    <servlet-name>FindFlight</servlet-name>
+    <servlet-class>goair.servlets.flight.FindFlight</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindFlight</servlet-name>
+    <url-pattern>/View/FlightView/FindFlight</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>createReservation</display-name>
+    <servlet-name>createReservation</servlet-name>
+    <servlet-class>goair.servlets.reservation.createReservation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>createReservation</servlet-name>
+    <url-pattern>/View/ReservationView/createReservation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>confirmReservation</display-name>
+    <servlet-name>confirmReservation</servlet-name>
+    <servlet-class>goair.servlets.reservation.confirmReservation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>confirmReservation</servlet-name>
+    <url-pattern>/View/ReservationView/confirmReservation</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+<description></description>
+<display-name>viewAllEmployees</display-name>
+<servlet-name>viewAllEmployees</servlet-name>
+<servlet-class>goair.servlets.employee.viewAllEmployees</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>viewAllEmployees</servlet-name>
+<url-pattern>/View/EmployeeView/viewAllEmployees</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<description></description>
+<display-name>editDeleteEmployee</display-name>
+<servlet-name>editDeleteEmployee</servlet-name>
+<servlet-class>goair.servlets.employee.editDeleteEmployee</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>editDeleteEmployee</servlet-name>
+<url-pattern>/View/EmployeeView/editDeleteEmployee</url-pattern>
+</servlet-mapping>
+</web-app>
