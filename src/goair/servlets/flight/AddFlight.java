@@ -93,7 +93,7 @@ public class AddFlight extends HttpServlet {
 	
 	
 	Calendar newDeptTime= Calendar.getInstance();
-	SimpleDateFormat sdf2 = new SimpleDateFormat("mm/dd/yyyyHH:mm:ss");
+	SimpleDateFormat sdf2 = new SimpleDateFormat("mm/dd/yyyy HH:mm:ss");
 	try {
 		newDeptTime.setTime(sdf2.parse(startDate+deptTime));
 	}
@@ -119,15 +119,15 @@ public class AddFlight extends HttpServlet {
    flight.setDaysOfWeek(dayOfWeek);
    flight.setDepartureTime(newDeptTime);
    flight.setDestination(destination);
-   flight.setFlightId(Integer.parseInt(flightId1));
+   //flight.setFlightId(Integer.parseInt(flightId1));
    flight.setFlightName(flightname);
    flight.setFlightStatus(flightStatus);
    flight.setFlyingDate(newStartDate);
    flight.setFlyingEndDate(newEndDate);
    flight.setFlyingStartDate(newStartDate);
-   flight.setSeatsReserved(Integer.parseInt(seatreserved));
+   //flight.setSeatsReserved(Integer.parseInt(seatreserved));
    flight.setTotalSeats(Integer.parseInt(totalSeats));
-   flight.setSeatsAvailable(Integer.parseInt(totalSeats) - Integer.parseInt(seatreserved));
+   //flight.setSeatsAvailable(Integer.parseInt(totalSeats) - Integer.parseInt(seatreserved));
    flight.setSource(source);
    flight.setDestination(destination);
    flight.setTicketPrice(Double.parseDouble(ticketPrice));
