@@ -58,7 +58,6 @@ public class viewAllCustomers extends HttpServlet {
      
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/viewAllCustomers.jsp");
 		dispatcher.forward(request, response);
-		
 
 	}
 

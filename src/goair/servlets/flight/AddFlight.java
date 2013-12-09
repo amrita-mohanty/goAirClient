@@ -142,7 +142,7 @@ public class AddFlight extends HttpServlet {
 		System.out.println("Added Successfully");
 			request.setAttribute("message",
 					"Successfully added flight to database.");
-			nextJSP = "/View/FlightView/addFlight.jsp";
+			nextJSP = "/View/GeneralView/welcome.jsp";
 
 		} else {
 			request.setAttribute("message", "Unable to create flight!");
