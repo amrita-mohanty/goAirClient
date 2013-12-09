@@ -22,7 +22,7 @@ public class AirlineServicesServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for AirlineServices
-    private java.lang.String AirlineServices_address = "http://localhost:8080/goAir/services/AirlineServices";
+    private java.lang.String AirlineServices_address = "http://localhost:8080/goAir1/services/AirlineServices";
 
     public java.lang.String getAirlineServicesAddress() {
         return AirlineServices_address;

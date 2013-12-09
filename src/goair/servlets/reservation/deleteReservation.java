@@ -53,7 +53,7 @@ public class deleteReservation extends HttpServlet {
 		
 		long pnr = Long.parseLong(request.getParameter("pnr"));
 		int flightId = Integer.parseInt(request.getParameter("flightId"));
-		int customerId = Integer.parseInt(request.getParameter("customerId"));
+		String customerId = (String)request.getParameter("customerId");
 		int numberOfSeatsBooked = Integer.parseInt(request.getParameter("numberOfSeatsBooked"));
 		String dateBooking = request.getParameter("dateOfBooking");
 		String dateFlying = request.getParameter("dateOfFlying");

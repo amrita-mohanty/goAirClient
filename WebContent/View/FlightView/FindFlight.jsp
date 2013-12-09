@@ -131,7 +131,9 @@
 													<input type="submit"  style="width: 100px;"
 													name="actionFlight" value="Delete" /> 
 													<input type="submit"  style="width: 100px;"
-													name="actionFlight" value="View" />
+													name="actionFlight" value="View Passengers" />
+													<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="View Crew Details" />
 											</form>
 											</div>
 					                   </td>

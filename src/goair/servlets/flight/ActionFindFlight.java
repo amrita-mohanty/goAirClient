@@ -145,6 +145,16 @@ public class ActionFindFlight extends HttpServlet {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/FlightView/deleteFlight");
 			dispatcher.forward(request, response);
 		}
+		
+		  int cFligtId = Integer.parseInt(flightId);
+		  if(buttonPress.contains("View Passengers"))
+		                 {
+		           
+		                         Customer [] result = adminProxy.getCustomersForFlight(cFligtId);
+		                         request.setAttribute("customers",result );
+		                         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/viewAllcustomer.jsp");
+		                         dispatcher.forward(request, response);
+		                 }
 	}
 
 }

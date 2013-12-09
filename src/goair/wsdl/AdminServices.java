@@ -29,4 +29,6 @@ public interface AdminServices extends java.rmi.Remote {
     public int editFlight(goair.model.flight.Flight flight) throws java.rmi.RemoteException;
     public int addFlight(goair.model.flight.Flight flight) throws java.rmi.RemoteException;
     public goair.model.flight.Flight[] getAllFlightsForAdmin() throws java.rmi.RemoteException;
+    public goair.model.employee.Employee[] getEmpployeesForFlight(int flightId) throws java.rmi.RemoteException;
+    public goair.model.customer.Customer[] getCustomersForFlight(int flightId) throws java.rmi.RemoteException;
 }
