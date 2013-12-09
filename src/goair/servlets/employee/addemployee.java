@@ -74,14 +74,14 @@ public class addemployee extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		Calendar dob = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("MMMddyyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("mm/dd/yyyy");
 		try {
 			dob.setTime(sdf.parse(month+day+year));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		} 
 		Calendar hireDate = Calendar.getInstance();
-		SimpleDateFormat sdf1 = new SimpleDateFormat("MMMddyyyy");
+		SimpleDateFormat sdf1 = new SimpleDateFormat("mm/dd/yyyy");
 		try {
 			hireDate.setTime(sdf1.parse(month_of_hiring + day_of_hiring + year_of_hiring));
 		} catch (ParseException e) {
