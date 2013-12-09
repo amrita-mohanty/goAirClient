@@ -190,8 +190,7 @@
     <servlet-name>editDeleteEmployee</servlet-name>
     <url-pattern>/View/EmployeeView/editDeleteEmployee</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>DeleteFlight</display-name>
     <servlet-name>DeleteFlight</servlet-name>
@@ -201,8 +200,7 @@
     <servlet-name>DeleteFlight</servlet-name>
     <url-pattern>/View/FlightView/DeleteFlight</url-pattern>
   </servlet-mapping>
-
-   <servlet>
+  <servlet>
     <description></description>
     <display-name>ActionFindFlight</display-name>
     <servlet-name>ActionFindFlight</servlet-name>
@@ -212,5 +210,4 @@
     <servlet-name>ActionFindFlight</servlet-name>
     <url-pattern>/View/FlightView/ActionFindFlight</url-pattern>
   </servlet-mapping>
-  
 </web-app>

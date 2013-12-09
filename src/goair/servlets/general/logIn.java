@@ -78,12 +78,13 @@ public class logIn extends HttpServlet {
 			customer  = customerProxy.customerLogin(userName, password);
 			session.setAttribute("customer", customer);
 	
+			
 		}
 		
 		if(role.contains("Employee"))
 		{
 			emp  = employeeProxy.employeeLogin(userName, password);
-			
+			session.setAttribute("employee", emp);
 	
 			if(emp != null && emp.getJobDesc().contains("employee")) {
 				sLogger.info("Valid Employee");

@@ -108,8 +108,6 @@ public class searchCustomer extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		
-		
-		
 	}
 
 }

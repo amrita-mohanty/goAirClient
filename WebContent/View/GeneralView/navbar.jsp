@@ -45,8 +45,7 @@
 			<p>
 			<a href="../ReservationView/createReservation.jsp">Create Reservation</a>
 			</p></li>
-			
-		
+
 		</c:if>	
 		
 		
@@ -112,10 +111,7 @@
 			<p>
 			<a href="../EmployeeView/updateCustomer.jsp">Update Employee</a>
 			</p></li>
-			
-			
-			
-			
+	
 		   <li>
 			<h3>Add a flight</h3>
 			<p>
@@ -147,6 +143,74 @@
 			<a href="../ReservationView/viewAllReservations.jsp">View All Reservations</a>
 			</p></li>
 			
+			<li>
+			<h3>Cancel Reservation</h3>
+			<p>
+			<a href="../ReservationView/deleteReservation.jsp">View All Reservations</a>
+			</p></li>
+
+		</c:if>
+		
+		
+		<c:if test ='<%=role.equalsIgnoreCase("Employee") %>'>
+			
+			<li><h3>Add Customer</h3>
+			<p>
+			<a href="../CustomerView/SignUp.jsp">Add Customer</a>
+			</p></li>
+			
+			<li><h3>Search Customer</h3>
+			<p>
+			<a href="../CustomerView/searchCustomer.jsp">Search Customer</a>
+			</p></li>
+			
+
+			<li>
+			<h3>View All Customers</h3>
+			<p>
+			<a href="../CustomerView/viewAllCustomers">View All Customers</a>
+			</p></li>
+			
+				
+			<li>
+			<h3>Delete Customer</h3>
+			<p>
+			<a href="../CustomerView/deleteCustomer.jsp">Delete Employee</a>
+			</p></li>
+			
+			<li>
+			<h3>Update Customer</h3>
+			<p>
+			<a href="../EmployeeView/updateCustomer.jsp">Update Employee</a>
+			</p></li>
+		   	<li>
+		   
+			
+			<li>
+			<h3>Edit Employee Profile</h3>
+			<p>
+			<a href="../View/EmployeeView/editProfileEmployee">Edit Profile</a>
+			</p></li>
+
+			
+			<li>
+			<h3>Search Flight</h3>
+			<p>
+			<a href="../FlightView/FindFlight.jsp">Search Flights</a>
+			</p></li>
+			
+			
+			<li>
+			<h3>Create Reservation</h3>
+			<p>
+			<a href="../ReservationView/createReservation.jsp">Create Reservation</a>
+			</p></li>
+			
+			<li>
+			<h3>View All Reservation</h3>
+			<p>
+			<a href="../ReservationView/viewAllReservations.jsp">View All Reservations</a>
+			</p></li>
 			
 			<li>
 			<h3>Cancel Reservation</h3>
@@ -154,25 +218,8 @@
 			<a href="../ReservationView/deleteReservation.jsp">View All Reservations</a>
 			</p></li>
 			
-			
-
-		</c:if>
 		
-		
-		
-			
-			
-		
-
-	
-			
-			
-			
-			
-			
-			
-			
-			
+		</c:if>	
 			
 	</ul>
 </body>

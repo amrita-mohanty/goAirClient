@@ -80,7 +80,7 @@ public class editProfileCustomer extends HttpServlet {
 			request.setAttribute("passNum",customer.getPassportNum());
 			
 			
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/updateCustomers");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/updateCustomer");
 			dispatcher.forward(request, response);
 	
 			
