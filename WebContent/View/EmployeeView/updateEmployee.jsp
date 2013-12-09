@@ -22,7 +22,8 @@
 </c:if>
 </div>	
 
-<form class="box login" name="updateEmployee" style="height: auto; top: 50%;" method="post" action="updateEmployee">
+<form  class="box login" class="box login"  name="updateEmployee" style="height: auto; top: 50%;" method="post" action="updateEmployee">
+		<table style="width: 100%;">
 		<h3>
 			<br> <label>Update an Employee !!! </label>
 		</h3>
@@ -376,7 +377,7 @@
 			</c:if>	
 	
 			</fieldset>
-		
+	</table>	
 </form>
 
 

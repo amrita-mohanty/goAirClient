@@ -51,7 +51,7 @@ public class createReservation extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		String role = (String) session.getAttribute("role");
 		
-		int customerId = Integer.parseInt(request.getParameter("customerId"));
+		String customerId = request.getParameter("customerId");
 		int flightId = Integer.parseInt(request.getParameter("flightId"));
 		int numberOfSeatsBooked = Integer.parseInt(request.getParameter("numberOfSeatsBooked"));
 		//String dateBooking = request.getParameter("dateOfBooking");

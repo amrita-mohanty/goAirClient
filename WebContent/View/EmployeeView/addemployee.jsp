@@ -22,12 +22,9 @@
 <div id="container" style="height:200% ; top: 50%;">
 		<div id="content" style="height: 200%; top: 50%;">
 <form class="box login" name="login" style="height: auto; top: 50%;" method="post" action="addemployee">
-		<h3>
-			<br> <label>Welcome to Go Airways !! </label>
-		</h3>
-
+		<table style="width: 100%;">
 		<fieldset class="boxBody">
-			<label>Employee SSN (XX-XX-XXXX)</label> <input type="text" tabindex="1" name="employeeId">	
+			<label>Employee SSN (XXX-XX-XXXX)</label> <input type="text" tabindex="1" name="employeeId">	
 			<label>First Name</label> <input type="text" tabindex="1" name="firstName">	
 			<label>Last Name</label> <input type="text" tabindex="1" name="lastName">
 			<label>Airline Name</label> <input type="text" tabindex="1" name="airlineName">
@@ -281,6 +278,7 @@
 		</fieldset>
 		
 		
+		
 		<footer>
 			
 			<input type="submit" class="btnLogin" value="Register" tabindex="3">
@@ -290,7 +288,7 @@
 
 
 
-
+</table>
 </form>
 </div>
 </div>

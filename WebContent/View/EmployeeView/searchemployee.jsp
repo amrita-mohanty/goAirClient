@@ -16,13 +16,14 @@
 <div id="navbar">
 		<jsp:include page="/View/GeneralView/navbar.jsp"></jsp:include>
 </div>
-<form class="box login" name="login" style="height: auto; top: 50%;" method="post" action="searchemployee">
+<form  class="box login"  name="login" style="height: auto; top: 50%;" method="post" action="searchemployee">
+		<table style="width: 100%;">
 		<h3>
 			<br> <label>Search a Employee!! Enter the Search Crieria </label>
 			<br><label>Enter the Search Crieria </label>
 		</h3>	
 			<fieldset class="boxBody">
-			<label>Employee SSN (XX-XX-XXXX)</label> <input type="text" tabindex="1" name="employeeId">	
+			<label>Employee SSN (XXX-XX-XXXX)</label> <input type="text" tabindex="1" name="employeeId">	
 			<label>First Name</label> <input type="text" tabindex="1" name="firstName">	
 			<label>Last Name</label> <input type="text" tabindex="1" name="lastName">
 			<label>Airline Name</label> <input type="text" tabindex="1" name="airlineName">
@@ -280,6 +281,7 @@
 			<input type="submit" class="btnLogin" value="Search" tabindex="3">
 			
 		</footer>
+		</table>
 		</form>
 </body>
 </html>

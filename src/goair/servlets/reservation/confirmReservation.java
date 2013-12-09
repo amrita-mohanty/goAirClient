@@ -44,18 +44,18 @@ public class confirmReservation extends HttpServlet {
 		PrintWriter out = response.getWriter();	
 		adminProxy.setEndpoint("http://localhost:8080/goAir/services/AdminServices");
 		
-		int customerId = Integer.parseInt(request.getParameter("customerId"));
+		String customerId = request.getParameter("customerId");
 		int flightId = Integer.parseInt(request.getParameter("flightId"));
 		int numberOfSeatsBooked = Integer.parseInt(request.getParameter("numberOfSeatsBooked"));
 		String dateBooking = request.getParameter("dateOfBooking");
 		String dateFlying = request.getParameter("dateOfFlying");
-		long creditCardNumber = Long.parseLong(request.getParameter("creditCardNumber"));
+		String creditCardNumber = request.getParameter("creditCardNumber");
 		double totalPrice = Double.parseDouble(request.getParameter("totalPrice"));
 		
 		Calendar dateOfBooking = Calendar.getInstance();
 		Calendar dateOfFlying = Calendar.getInstance();
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("MMM/dd/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 		try {
 			dateOfBooking.setTime(sdf.parse(dateBooking));
 			dateOfFlying.setTime(sdf.parse(dateFlying));

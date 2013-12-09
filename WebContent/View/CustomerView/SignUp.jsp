@@ -27,7 +27,7 @@
 		
 		
 		<fieldset class="boxBody">
-			<label>Customer SSN (XX-XX-XXXX)</label> <input type="text" tabindex="1" name="customerId">	
+			<label>Customer SSN (XXX-XX-XXXX)</label> <input type="text" tabindex="1" name="customerId">	
 			<label>First Name</label> <input type="text" tabindex="1" name="fname">	
 			<label>Last Name</label> <input type="text" tabindex="1" name="lname">
 			<label>Gender</label>	

@@ -27,11 +27,12 @@
 </div>	
 
 
-<form class="box login" name="login" style="height: auto; top: 50%;" method="post" action="SignUp">
-		<h3>
+<form name="login" style="height: auto; top: 50%;" method="post" action="SignUp">
+	<table style="width: 100%;">	<h3>
 			<br> <label>Welcome to Go Airways !! </label>
 		</h3>	
 <h2><b><font size="4"> Welcome, <%=role %></font></b></h2>
+</table>
 </form>
 
 </div> 

@@ -114,12 +114,21 @@ public class SignUp extends HttpServlet {
 		
 
 		if(result!=-1)
-			System.out.println("Registered Successfully");
+		{	
+			
 
 		request.setAttribute("message",result);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/GeneralView/welcome.jsp");
 		dispatcher.forward(request, response);
+		}
 		
+		else
+		{
+
+		request.setAttribute("message","Registration Failed");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/SignUp.jsp");
+		dispatcher.forward(request, response);
+		}
 		
 	}
 

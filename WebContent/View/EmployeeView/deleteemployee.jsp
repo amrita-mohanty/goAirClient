@@ -23,8 +23,8 @@
 </c:if>
 </div>		
 
-<form class="box login" name="DeleteEmployee" style="height: auto; top: 50%;" method="post" action="deleteemployee">
-		
+<form class="box login"  name="DeleteEmployee" style="height: auto; top: 50%;" method="post" action="deleteemployee">
+	<table style="width: 100%;">	
 		
 		<h3>
 			<br> <label>Delete Employee</label>
@@ -38,6 +38,7 @@
 		<footer>
 			<input type="submit" class="btnLogin" value="Delete" tabindex="3">
 		</footer>
+		</table>
 </form>
 </body>
 </html>

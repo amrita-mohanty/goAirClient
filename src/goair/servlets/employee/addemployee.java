@@ -113,12 +113,27 @@ public class addemployee extends HttpServlet {
 		
 		int result = adminProxy.addEmployee(emp);
 		
-		if(result!=-1)
-			System.out.println("Registered Successfully");
+		String textResult = null;
 		
-		request.setAttribute("message",result);
+		if(result!=-1)
+			textResult =  "Registered Successfully";
+		
+		if(result == -4)
+			textResult = "invalid customer-id";
+		
+		request.setAttribute("message",textResult);
+		
+		if(result == 1)
+		{
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/GeneralView/welcome.jsp");
 		dispatcher.forward(request, response);
+		}
+		
+		else
+		{
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/EmployeeView/addemployee.jsp");
+			dispatcher.forward(request, response);
+		}
 		}
 		
 	}
