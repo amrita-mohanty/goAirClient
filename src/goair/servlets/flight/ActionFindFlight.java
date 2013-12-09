@@ -59,7 +59,7 @@ public class ActionFindFlight extends HttpServlet {
 		String airlinename = request.getParameter("airlineName");
 		String source = request.getParameter("source");
 		String destination = request.getParameter("destination");
-		String deptTime = request.getParameter("departureTime");
+		String deptTime = request.getParameter("deptTime");
 		String arrivalTime = request.getParameter("arrivalTime");
 		
 		String startDate = request.getParameter("flyingStartDate");
@@ -75,7 +75,7 @@ public class ActionFindFlight extends HttpServlet {
        
        Calendar arrivt = Calendar.getInstance();
        Calendar departuret = Calendar.getInstance();
-		SimpleDateFormat sd = new SimpleDateFormat("E MMM HH:MM:SS Z YYYY");
+		SimpleDateFormat sd = new SimpleDateFormat("E MMM DD HH:MM:SS Z YYYY");
 		try {
 			arrivt.setTime(sd.parse(arrivalTime));
 			arrivt.setTime(sd.parse(deptTime));
@@ -113,7 +113,7 @@ public class ActionFindFlight extends HttpServlet {
 		int cFligtId = Integer.parseInt(flightId);
 		
 		Calendar newStartDate = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("E MMM HH:MM:SS Z YYYY");
+		SimpleDateFormat sdf = new SimpleDateFormat("E MMM DD HH:MM:SS Z YYYY");
 		try {
 		 newStartDate.setTime(sdf.parse(startDate));
 		}
@@ -124,7 +124,7 @@ public class ActionFindFlight extends HttpServlet {
 
 		
 		Calendar newEndDate = Calendar.getInstance();
-		SimpleDateFormat sdf1 = new SimpleDateFormat("E MMM HH:MM:SS Z YYYY");
+		SimpleDateFormat sdf1 = new SimpleDateFormat("E MMM DD HH:MM:SS Z YYYY");
 		try {
 			newEndDate.setTime(sdf1.parse(endDate));
 		}
@@ -215,8 +215,13 @@ public class ActionFindFlight extends HttpServlet {
 		if(buttonPress.contains("Reserve"))
 		{
           
+			flyingdate = request.getParameter("flyingdate");
+			if(role.contains("Customer"))
+			{
 			Customer customer = (Customer) session.getAttribute("customer");
 			request.setAttribute("customerId",customer.getCustomerId() );
+			}
+			
 			request.setAttribute("flightId",cFligtId );
 			request.setAttribute("flyingdate",flyingdate );
 			

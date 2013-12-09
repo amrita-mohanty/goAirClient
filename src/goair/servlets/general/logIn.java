@@ -61,7 +61,6 @@ public class logIn extends HttpServlet {
 		if(role.contains("Admin"))
 		{
 			emp  = employeeProxy.employeeLogin(userName, password);
-			
 	
 			if(emp != null && emp.getJobDesc().contains("admin")) {
 				sLogger.info("Valid admin.");
@@ -77,9 +76,8 @@ public class logIn extends HttpServlet {
 		{
 			customer  = customerProxy.customerLogin(userName, password);
 			session.setAttribute("customer", customer);
-	
-			
 		}
+		
 		
 		if(role.contains("Employee"))
 		{

@@ -111,7 +111,7 @@ return false;
 			<input type="hidden" tabindex="1" name="customerId" value = "${customerId}">	
 			<label>Flight Id</label> <c:out value = "${flightId}"/>
 			
-			<input type="text" tabindex="1" name="flightId">
+			<input type="hidden" tabindex="1" name="flightId">
 			<label>Number of seats to reserve</label><input type="text" tabindex="1" name="numberOfSeatsBooked">
 			<!-- <label>Date of Booking </label> <input type="text" tabindex="1" name="dateOfBooking" id="datepick"> -->
 			<label>Date of Flying </label> 

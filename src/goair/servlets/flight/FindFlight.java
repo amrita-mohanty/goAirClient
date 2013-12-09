@@ -81,23 +81,14 @@ public class FindFlight extends HttpServlet {
 	request.setAttribute("savedDestination", request.getParameter("destination"));
 	
 	
-	String flydate = request.getParameter("flyingdate");
+	String flyingdate = request.getParameter("flyingdate");
 	
 	
 	Calendar newFlyDate = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("MM/DD/YYYY");
 	
-	if(!flydate.equals("")){
-	try {
-		newFlyDate.setTime(sdf.parse(flydate));
-	} catch (ParseException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	System.out.print("FlyingDate"+ flydate);
-	System.out.print("FlyingDate"+ newFlyDate);
-	objFlight.setDateOfFlying(newFlyDate);
-	}
+	
+	
 	
 		
 	adminproxy.setEndpoint("http://localhost:8080/goAir/services/AdminServices");
@@ -105,6 +96,8 @@ public class FindFlight extends HttpServlet {
 	searchedFlight = adminproxy.searchFlightsForAdmin(objFlight);
 	
 	request.setAttribute("SearchFlight", searchedFlight);
+	request.setAttribute("flyingdate", flyingdate);
+	
 	
 	String nextJSP = "/View/FlightView/FindFlight.jsp";
 	RequestDispatcher dispatcher = getServletContext()

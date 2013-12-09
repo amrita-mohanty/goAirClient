@@ -210,6 +210,8 @@
 													name="flightId" value="${flight.flightId}" /> 
 												<input type="hidden" 
 													name="flightName" value="${flight.flightName}" />
+												<input type="hidden" 
+													name="flyingdate" value="${flyingdate}" />
 													
 												<input type="hidden" 
 												     name="source" value="${flight.source}" /> 
