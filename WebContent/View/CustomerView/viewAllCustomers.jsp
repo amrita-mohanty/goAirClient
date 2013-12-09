@@ -59,8 +59,6 @@ table {
 
 <tbody>
 <c:forEach items="${customers}"  var="item" >
-
-
 <tr>
 <td>${item.customerId}</td>
 <td>${item.firstName}</td>

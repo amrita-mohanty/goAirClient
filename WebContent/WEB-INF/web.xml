@@ -60,6 +60,9 @@
     <servlet-name>addemployee</servlet-name>
     <url-pattern>/View/EmployeeView/addemployee</url-pattern>
   </servlet-mapping>
+ 
+ 
+ 
   <servlet>
     <description></description>
     <display-name>viewAllCustomers</display-name>
@@ -70,6 +73,9 @@
     <servlet-name>viewAllCustomers</servlet-name>
     <url-pattern>/View/CustomerView/viewAllCustomers</url-pattern>
   </servlet-mapping>
+ 
+ 
+ 
   <servlet>
     <description></description>
     <display-name>editDeleteCustomer</display-name>

@@ -45,16 +45,16 @@ public class viewAllCustomers extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request,
-		
-		HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AdminServicesProxy adminProxy = new AdminServicesProxy();
 		System.out.println("view all customers");
-		String message = (String) request.getAttribute("message");
+		//String message = (String) request.getAttribute("message");
 
 		Customer[] result = adminProxy.getAllCustomersForAdmin();
 		
-        request.setAttribute("customers",result );
+        request.setAttribute("customers",result);
+        
+        System.out.println("showing result" + result.toString());
      
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/viewAllCustomers.jsp");
 		dispatcher.forward(request, response);
