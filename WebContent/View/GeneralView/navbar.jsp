@@ -57,6 +57,11 @@
 			<a href="../EmployeeView/addemployee.jsp">Add Employee</a>
 			</p></li>
 			
+			<li><h3>Search Employee</h3>
+			<p>
+			<a href="../EmployeeView/searchemployee.jsp">Search Employee</a>
+			</p></li>
+			
 			<li>
 			<h3>View All Employees</h3>
 			<p>
@@ -83,7 +88,12 @@
 			<a href="../CustomerView/SignUp.jsp">Add Customer</a>
 			</p></li>
 			
+			<li><h3>Search Customer</h3>
+			<p>
+			<a href="../CustomerView/searchCustomer.jsp">Search Customer</a>
+			</p></li>
 			
+
 			<li>
 			<h3>View All Customers</h3>
 			<p>
@@ -101,6 +111,27 @@
 			<h3>Update Customer</h3>
 			<p>
 			<a href="../EmployeeView/updateCustomer.jsp">Update Employee</a>
+			</p></li>
+			
+			
+			
+			
+		   <li>
+			<h3>Add a flight</h3>
+			<p>
+			<a href="../FlightView/addFlight.jsp">Add a Flight</a>
+			</p></li>
+			<li>
+			<h3>Update a flight</h3>
+			<p>
+			<a href="../FlightView/updateFlight.jsp">Update a Flight</a>
+			</p>
+			</li>
+			
+			<li>
+			<h3>Search Flight</h3>
+			<p>
+			<a href="../FlightView/FindFlight.jsp">Search Flights</a>
 			</p></li>
 			
 			
@@ -129,28 +160,6 @@
 		
 		
 		
-		   <li>
-			<h3>Add a flight</h3>
-			<p>
-			<a href="../FlightView/addFlight.jsp">Add a Flight</a>
-			</p></li>
-			<li>
-			<h3>Update a flight</h3>
-			<p>
-			<a href="../FlightView/updateFlight.jsp">Update a Flight</a>
-			</p>
-			</li>
-			
-			
-			
-		
-			
-			
-			<li>
-			<h3>Search Flight</h3>
-			<p>
-			<a href="../FlightView/FindFlight.jsp">Search Flights</a>
-			</p></li>
 			
 			
 		

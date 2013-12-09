@@ -27,6 +27,11 @@
 </script>
 </head>
 <body>
+<div id="navbar">
+		<jsp:include page="/View/GeneralView/navbar.jsp"></jsp:include>
+</div>
+
+
 <form class="box login" name="form1" style="height: auto; top: 50%;" method="post" action="AddFlight">
 		<h3>
 			<br> <label>Add a New Flight</label>
@@ -36,68 +41,180 @@
 					<h3>
 						<c:out value="${message }"></c:out>
 					</h3>
-				</c:if>
+		</c:if>
 		
 		<fieldset class="boxBody">
 			<label>Flight Name</label> <input type="text" tabindex="1" name="flightName">	
 			<label>Airline Name</label> <input type="text" tabindex="1" name="airlineName">
 			<label>Flight ID</label> <input type="text" tabindex="1" name="flightId">
-			<label>Source</label> <input type="text" tabindex="1" name="source">
-			<label>Destination</label> <input type="text" tabindex="1" name="destination">
+			<label>Source</label> 
+			<select name="source" class="cjComboBox" >
+					<option value="">Pick your state</option>
+					<option value="AL">Alabama</option>
+					<option value="AK">Alaska</option>
+					<option value="AZ">Arizona</option>
+					<option value="AR">Arkansas</option>
+					<option value="CA">California</option>
+					<option value="CO">Colorado</option>
+					<option value="CT">Connecticut</option>
+					<option value="DE">Delaware</option>
+					<option value="DC">District of Columbia</option>
+					<option value="FL">Florida</option>
+					<option value="GA">Georgia</option>
+					<option value="HI">Hawaii</option>
+					<option value="ID">Idaho</option>
+					<option value="IL">Illinois</option>
+					<option value="IN">Indiana</option>
+					<option value="IA">Iowa</option>
+					<option value="KS">Kansas</option>
+					<option value="KY">Kentucky</option>
+					<option value="LA">Louisiana</option>
+					<option value="ME">Maine</option>
+					<option value="MD">Maryland</option>
+					<option value="MA">Massachusetts</option>
+					<option value="MI">Michigan</option>
+					<option value="MN">Minnesota</option>
+					<option value="MS">Mississippi</option>
+					<option value="MO">Missouri</option>
+					<option value="MT">Montana</option>
+					<option value="NE">Nebraska</option>
+					<option value="NV">Nevada</option>
+					<option value="NH">New Hampshire</option>
+					<option value="NJ">New Jersey</option>
+					<option value="NM">New Mexico</option>
+					<option value="NY">New York</option>
+					<option value="NC">North Carolina</option>
+					<option value="ND">North Dakota</option>
+					<option value="OH">Ohio</option>
+					<option value="OK">Oklahoma</option>
+					<option value="OR">Oregon</option>
+					<option value="PA">Pennsylvania</option>
+					<option value="RI">Rhode Island</option>
+					<option value="SC">South Carolina</option>
+					<option value="SD">South Dakota</option>
+					<option value="TN">Tennessee</option>
+					<option value="TX">Texas</option>
+					<option value="UT">Utah</option>
+					<option value="VT">Vermont</option>
+					<option value="VA">Virginia</option>
+					<option value="WA">Washington</option>
+					<option value="WV">West Virginia</option>
+					<option value="WI">Wisconsin</option>
+					<option value="WY">Wyoming</option>
+				</select>
+			
+			
+			
+			<label>Destination</label> 
+				<select name="destination" class="cjComboBox" >
+					<option value="">Pick your state</option>
+					<option value="AL">Alabama</option>
+					<option value="AK">Alaska</option>
+					<option value="AZ">Arizona</option>
+					<option value="AR">Arkansas</option>
+					<option value="CA">California</option>
+					<option value="CO">Colorado</option>
+					<option value="CT">Connecticut</option>
+					<option value="DE">Delaware</option>
+					<option value="DC">District of Columbia</option>
+					<option value="FL">Florida</option>
+					<option value="GA">Georgia</option>
+					<option value="HI">Hawaii</option>
+					<option value="ID">Idaho</option>
+					<option value="IL">Illinois</option>
+					<option value="IN">Indiana</option>
+					<option value="IA">Iowa</option>
+					<option value="KS">Kansas</option>
+					<option value="KY">Kentucky</option>
+					<option value="LA">Louisiana</option>
+					<option value="ME">Maine</option>
+					<option value="MD">Maryland</option>
+					<option value="MA">Massachusetts</option>
+					<option value="MI">Michigan</option>
+					<option value="MN">Minnesota</option>
+					<option value="MS">Mississippi</option>
+					<option value="MO">Missouri</option>
+					<option value="MT">Montana</option>
+					<option value="NE">Nebraska</option>
+					<option value="NV">Nevada</option>
+					<option value="NH">New Hampshire</option>
+					<option value="NJ">New Jersey</option>
+					<option value="NM">New Mexico</option>
+					<option value="NY">New York</option>
+					<option value="NC">North Carolina</option>
+					<option value="ND">North Dakota</option>
+					<option value="OH">Ohio</option>
+					<option value="OK">Oklahoma</option>
+					<option value="OR">Oregon</option>
+					<option value="PA">Pennsylvania</option>
+					<option value="RI">Rhode Island</option>
+					<option value="SC">South Carolina</option>
+					<option value="SD">South Dakota</option>
+					<option value="TN">Tennessee</option>
+					<option value="TX">Texas</option>
+					<option value="UT">Utah</option>
+					<option value="VT">Vermont</option>
+					<option value="VA">Virginia</option>
+					<option value="WA">Washington</option>
+					<option value="WV">West Virginia</option>
+					<option value="WI">Wisconsin</option>
+					<option value="WY">Wyoming</option>
+				</select>
+			
 			<label>Departure Time</label> 
 			<select name="deptTime" class="cjComboBox" >
 			<option value="12:00:00">12 AM</option>
-	<option value="1:00:00">1 AM</option>
-	<option value="2:00:00">2 AM</option>
-	<option value="3:00:00">3 AM</option>
-	<option value="4:00:00"">4 AM</option>
-	<option value="5:00:00"">5 AM</option>
-	<option value="6:00:00"">6 AM</option>
-	<option value="7:00:00"">7 AM</option>
-	<option value="8:00:00"">8 AM</option>
-	<option value="9:00:00">9 AM</option>
-	<option value="10:00:00">10 AM</option>
-	<option value="11:00:00"">11 AM</option>
-	<option value="12:00:00"">12 PM</option>
-	<option value="13:00:00"">1 PM</option>
-	<option value="14:00:00"">2 PM</option>
-	<option value="15:00:00"">3 PM</option>
-	<option value="16:00:00"">4 PM</option>
-	<option value="17:00:00"">5 PM</option>
-	<option value="18:00:00"">6 PM</option>
-	<option value="19:00:00"">7 PM</option>
-	<option value="20:00:00"">8 PM</option>
-	<option value="21:00:00"">9 PM</option>
-	<option value="22:00:00"">10 PM</option>
-    <option value="23:00:00"">11 PM</option>
+			<option value="1:00:00">1 AM</option>
+			<option value="2:00:00">2 AM</option>
+			<option value="3:00:00">3 AM</option>
+			<option value="4:00:00">4 AM</option>
+			<option value="5:00:00">5 AM</option>
+			<option value="6:00:00">6 AM</option>
+			<option value="7:00:00">7 AM</option>
+			<option value="8:00:00">8 AM</option>
+			<option value="9:00:00">9 AM</option>
+			<option value="10:00:00">10 AM</option>
+			<option value="11:00:00">11 AM</option>
+			<option value="12:00:00">12 PM</option>
+			<option value="13:00:00">1 PM</option>
+			<option value="14:00:00">2 PM</option>
+			<option value="15:00:00">3 PM</option>
+			<option value="16:00:00">4 PM</option>
+			<option value="17:00:00">5 PM</option>
+			<option value="18:00:00">6 PM</option>
+			<option value="19:00:00">7 PM</option>
+			<option value="20:00:00">8 PM</option>
+			<option value="21:00:00">9 PM</option>
+			<option value="22:00:00">10 PM</option>
+    		<option value="23:00:00">11 PM</option>
 	</select>
 	
-<label>Arrival Time</label>
+			<label>Arrival Time</label>
 	<select name="arrivalTime" class="cjComboBox" >
     <option value="12:00:00">12 AM</option>
 	<option value="1:00:00">1 AM</option>
 	<option value="2:00:00">2 AM</option>
 	<option value="3:00:00">3 AM</option>
-	<option value="4:00:00"">4 AM</option>
-	<option value="5:00:00"">5 AM</option>
-	<option value="6:00:00"">6 AM</option>
-	<option value="7:00:00"">7 AM</option>
-	<option value="8:00:00"">8 AM</option>
+	<option value="4:00:00">4 AM</option>
+	<option value="5:00:00">5 AM</option>
+	<option value="6:00:00">6 AM</option>
+	<option value="7:00:00">7 AM</option>
+	<option value="8:00:00">8 AM</option>
 	<option value="9:00:00">9 AM</option>
 	<option value="10:00:00">10 AM</option>
-	<option value="11:00:00"">11 AM</option>
-	<option value="12:00:00"">12 PM</option>
-	<option value="13:00:00"">1 PM</option>
-	<option value="14:00:00"">2 PM</option>
-	<option value="15:00:00"">3 PM</option>
-	<option value="16:00:00"">4 PM</option>
-	<option value="17:00:00"">5 PM</option>
-	<option value="18:00:00"">6 PM</option>
-	<option value="19:00:00"">7 PM</option>
-	<option value="20:00:00"">8 PM</option>
-	<option value="21:00:00"">9 PM</option>
-	<option value="22:00:00"">10 PM</option>
-    <option value="23:00:00"">11 PM</option>
+	<option value="11:00:00">11 AM</option>
+	<option value="12:00:00">12 PM</option>
+	<option value="13:00:00">1 PM</option>
+	<option value="14:00:00">2 PM</option>
+	<option value="15:00:00">3 PM</option>
+	<option value="16:00:00">4 PM</option>
+	<option value="17:00:00">5 PM</option>
+	<option value="18:00:00">6 PM</option>
+	<option value="19:00:00">7 PM</option>
+	<option value="20:00:00">8 PM</option>
+	<option value="21:00:00">9 PM</option>
+	<option value="22:00:00">10 PM</option>
+    <option value="23:00:00">11 PM</option>
 	</select>
 
 			<label>Start Date <input type="text" name="startdatepick" id="startdatepick" ></label>
@@ -115,12 +232,14 @@
             <input type="checkbox" name="dayofweek" value="Friday">Friday<br>
             <input type="checkbox" name="dayofweek" value="Saturday">Saturday<br>
             <input type="checkbox" name="dayofweek" value="Sunday">Sunday<br>
-            
+			
 			</fieldset>
-			<footer>
+			 <footer>
 			<input type="submit" class="btnLogin" value="Add a Flight"  name ="addflight" tabindex="3">
 			</footer>
+			
 			</form>
+			 
 			
 </body>
 </html>

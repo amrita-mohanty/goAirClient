@@ -65,7 +65,7 @@
 						<td><input type="submit" name="searchFlight" value="Submit"></td>
 					</tr>
 					</table>
-					
+				</form>				
 					<h2>Searched Flight</h2>
 					<h4>
 						<c:if test="${message1 ne '' }">
@@ -79,7 +79,7 @@
 							<th >Seat Available</th>
 							<c:choose>
 								<c:when
-									test="${(not empty user.firstName) && (user.memberType ne 'admin')}">
+									test="${(not empty user.firstName) && (user.role ne 'admin')}">
 									<th style="width:100px;">Action</th>
 								</c:when>
 								<c:otherwise>
@@ -88,41 +88,59 @@
 							</c:choose>
 						</tr>
 						
-						
+			
 						<c:forEach items="${SearchFlight}" var="flight">
 							<tr>
-								<td align="center"><c:out value="${flight.flightId }"></c:out></td>
-								<td align="center"><a href="SearchMovieAction?movieId=${movies.movieId}">${movies.movieName }</a></td>
-								<td align="center"><c:out value="${movies.availableCopies }"></c:out></td>
-								<c:if
-									test="${(not empty user.firstName) && (user.memberType eq 'admin')}">
+								<td align="center">${flight.flightId }</td>
+								<td align="center">${flight.flightName }</td>
+								<td align="center">${flight.seatsAvailable }</td>
+			
 									<td align="center" style="width:350px;">
 										<div style="float:left;width:100px;">
-											<form name="UpdateFlight" method="post"
-												action="UpdateFlight">
-												<input type="submit"  style="width: 100px;"
-													name="updateFlight" value="Update" /> 
+											<form name="UpdateFlight" method="post" action="ActionFindFlight">
 												<input type="hidden"
 													name="flightId" value="${flight.flightId}" /> 
 												<input type="hidden" 
 													name="flightName" value="${flight.flightName}" />
+													
 												<input type="hidden" 
 												     name="source" value="${flight.source}" /> 
 												  <input type="hidden" 
 												     name="destination" value="${flight.destination}" />    
 												<input type="hidden"
-													name="arrivalTime" value="${flight.arrivalDate}" /> 
+													name="arrivalTime" value="${flight.arrivalTime}" /> 
 												<input type="hidden" 
-												name="deptTime" value="${flight.deptTime}" />	
+												name="deptTime" value="${flight.departureTime}" />	
+												<input type="hidden" 
+												name="airlineName" value="${flight.airlineName}" />	
+												<input type="hidden" 
+												name="crewDetails" value="${flight.crewDetails}" />	
+												<input type="hidden" 
+												name="passengers" value="${flight.passengers}" />
+												<input type="hidden" 
+												name="totalSeats" value="${flight.totalSeats}" />
+												
+													<!--
+												<input type="hidden" 
+												name="flyingEndDate" value="${flight.flyingEndDate.time}" />		
+												<input type="hidden" 
+												name="flyingStartDate" value="${flight.flyingStartDate.time}" />		
+												-->
+												<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="Update" /> 
+													<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="Delete" /> 
+													<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="View" />
 											</form>
 											</div>
 					                   </td>
-					</c:if>
+				
 					</tr>
 					</c:forEach>
 
 </table>
-</form>
+
 </div>
 </div>
 

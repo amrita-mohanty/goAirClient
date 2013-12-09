@@ -64,7 +64,7 @@ public class AddFlight extends HttpServlet {
 		String arrivalTime = request.getParameter("arrivalTime");
 		String startDate = request.getParameter("startdatepick");
 		String endDate = request.getParameter("enddatepick");
-		String flighStatus = request.getParameter("flighstatus");
+		String flightStatus = request.getParameter("flightstatus");
 		String totalSeats = request.getParameter("totalseats");
 		String seatreserved = request.getParameter("seatreserved");
 		String ticketPrice = request.getParameter("ticketprice");
@@ -121,7 +121,7 @@ public class AddFlight extends HttpServlet {
    flight.setDestination(destination);
    flight.setFlightId(Integer.parseInt(flightId1));
    flight.setFlightName(flightname);
-   flight.setFlightStatus(flighStatus);
+   flight.setFlightStatus(flightStatus);
    flight.setFlyingDate(newStartDate);
    flight.setFlyingEndDate(newEndDate);
    flight.setFlyingStartDate(newStartDate);

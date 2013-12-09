@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import goair.util.SearchParametersForCustomers;
 import goair.wsdl.AdminServicesProxy;
@@ -36,7 +37,7 @@ public class FindFlight extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doPost(request, response);
+		
 	}
 
 	/**
@@ -48,7 +49,8 @@ public class FindFlight extends HttpServlet {
 		adminproxy.setEndpoint("http://localhost:8080/goAir/services/AdminServices");
 		SearchParametersForFlights objFlight = new SearchParametersForFlights();
 		Flight[] searchedFlight;
-	    objFlight.setFlightNumber("flightName");
+	    objFlight.setFlightName(request.getParameter("flightName"));
+	    
 	
 	//String flightName = request.getParameter("savedname");
 	
@@ -76,22 +78,21 @@ public class FindFlight extends HttpServlet {
 	objFlight.setDestination(request.getParameter("destination"));
 	request.setAttribute("savedDestination", request.getParameter("destination"));
 	
-	
-	
-	
 	String flydate = request.getParameter("flyingdate");
 	Calendar newFlyDate = Calendar.getInstance();
-	SimpleDateFormat sdf = new SimpleDateFormat("mm/dd/yyyy");
+	SimpleDateFormat sdf = new SimpleDateFormat("MM/DD/YYYY");
 	
+	if(!flydate.equals("")){
 	try {
 		newFlyDate.setTime(sdf.parse(flydate));
 	} catch (ParseException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	
+	System.out.print("FlyingDate"+ flydate);
+	System.out.print("FlyingDate"+ newFlyDate);
 	objFlight.setDateOfFlying(newFlyDate);
-	
+	}
 	
 		
 	adminproxy.setEndpoint("http://localhost:8080/goAir/services/AdminServices");
