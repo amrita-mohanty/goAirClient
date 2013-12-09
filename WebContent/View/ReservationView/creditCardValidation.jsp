@@ -27,7 +27,21 @@
 </c:if>
 </div>	
 
-<form class="box login" style="height: auto; top: 50%;" method="post" action="confirmReservation">
+<script>
+function validate_creditcardnumber()
+{
+
+var re16digit=/^\d{16}$/
+if (document.myform.CreditCardNumber.value.search(re16digit)==-1)
+alert("Please enter your 16 digit credit card numbers");
+location.href = 'creditCardValidate.jsp';
+return false;
+
+}
+</script>
+
+
+<form name="myform" class="box login" style="height: auto; top: 50%;" method="post" action="confirmReservation">
 		<h3>
 			<br> <label>Confirm Reservation!!</label>
 		</h3>
@@ -43,13 +57,13 @@
 			<label>Total Price :</label><c:out value="${reservation.totalPrice }"></c:out>
 			
 			
-			<label>Credit Card Number</label> <input type="text" tabindex="1" name="creditCardNumber">
+			<label>Credit Card Number</label> <input type="text" tabindex="1" name="CreditCardNumber">
 			
 					
 		</fieldset>
 		<footer>
 		<br>
-		<input type="submit" class="btnLogin" value="Submit" tabindex="3">
+		<input class="btnLogin"  type="submit" value="Submit" onclick="validate_creditcardnumber()" />
 		<!-- <input class="submit" type="submit" value="Submit" onclick="validate_creditcardnumber()" /> -->
 		
 		</footer>

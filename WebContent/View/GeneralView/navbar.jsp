@@ -215,7 +215,7 @@
 			<li>
 			<h3>Cancel Reservation</h3>
 			<p>
-			<a href="../ReservationView/deleteReservation.jsp">View All Reservations</a>
+			<a href="../ReservationView/deleteReservation.jsp">Cancel Reservations</a>
 			</p></li>
 			
 		
