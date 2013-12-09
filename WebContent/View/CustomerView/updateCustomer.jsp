@@ -30,7 +30,17 @@
 			<br> <label>Update a Customer!!</label>
 		</h3>
 			<fieldset class="boxBody">
-			<label>Customer ID</label> <input type="text"  tabindex="2" value = "${customer.customerId}" required name="customerId">
+			
+			<c:if test= "${customer.customerId ne ''}">
+			<label>Customer ID</label><c:out value = "${customer.customerId}"/>
+			<input type="hidden"  tabindex="2" value = "${customer.customerId}" required name="customerId">
+			</c:if>
+			
+			<c:if test= "${customer.customerId eq ''}">
+			<label>Customer ID</label>
+			<input type="text"  tabindex="2"  name="customerId">
+			</c:if>
+			
 			
 			
 			<label>First Name</label> <input type="text" tabindex="1" value = "${customer.firstName}"name="fname">	

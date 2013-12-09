@@ -6,8 +6,6 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import goair.model.employee.Employee;
-import goair.model.general.Person;
 import goair.wsdl.AdminServicesProxy;
 
 /**
@@ -48,6 +45,11 @@ public class addemployee extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession session = request.getSession(false);
+		String role = (String) session.getAttribute("role");
+		
+		if(role.contains("Admin"))
+		{
 		AdminServicesProxy adminProxy = new AdminServicesProxy();
 		
 		String firstName = request.getParameter("firstName");
@@ -101,17 +103,21 @@ public class addemployee extends HttpServlet {
 		emp.setEmailId(emailId);
 		emp.setPassword(password);
 		
-		
-		PrintWriter out = response.getWriter();	
+	
 		adminProxy.setEndpoint("http://localhost:8080/goAir/services/AdminServices");
 		
-		HttpSession session = request.getSession(false);
-		String role = (String) session.getAttribute("role");
+		
 		
 		int result = adminProxy.addEmployee(emp);
 		
 		if(result!=-1)
 			System.out.println("Registered Successfully");
+		
+		request.setAttribute("message",result);
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/GeneralView/welcome.jsp");
+		dispatcher.forward(request, response);
+		}
+		
 	}
 
 }

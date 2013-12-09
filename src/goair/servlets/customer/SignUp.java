@@ -13,6 +13,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -46,7 +47,9 @@ public class SignUp extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		CustomerServicesProxy customerProxy = new CustomerServicesProxy();
+		AdminServicesProxy adminProxy = new AdminServicesProxy();
 		
+		String customerId = request.getParameter("customerId");
 		String fname = request.getParameter("fname");
 		String lname = request.getParameter("lname");
 		String gender = request.getParameter("gender");
@@ -75,6 +78,8 @@ public class SignUp extends HttpServlet {
 		
 		
 		Customer customer = new Customer();
+		
+		customer.setCustomerId(customerId);
 		customer.setFirstName(fname);
 		customer.setLastName(lname);
 		customer.setGender(gender);
@@ -91,14 +96,31 @@ public class SignUp extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();	
 		customerProxy.setEndpoint("http://localhost:8080/goAir/services/CustomerServices");
+		adminProxy.setEndpoint("http://localhost:8080/goAir/services/AdminServices");
 		
 		HttpSession session = request.getSession(false);
 		String role = (String) session.getAttribute("role");
 		
-		int result = customerProxy.addCustomer(customer);
+		int result = 0;
 		
+		if(role.contains("Customer"))
+		{
+				result = customerProxy.addCustomer(customer);
+				customer  = customerProxy.customerLogin(customer.getEmailId(), customer.getPassword());
+		}
+		
+		if(role.contains("Admin"))
+				result = adminProxy.addCustomer(customer);
+		
+
 		if(result!=-1)
 			System.out.println("Registered Successfully");
+
+		request.setAttribute("message",result);
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/GeneralView/welcome.jsp");
+		dispatcher.forward(request, response);
+		
+		
 	}
 
 }

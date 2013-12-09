@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE HTML>
 <html>
@@ -31,7 +32,10 @@
 					<option value="all">All</option>
 				</select> <br> <br> <input type="submit" name="submitBooking"
 					value="Submit">
+					
 			</form>
+			
+			
 			<c:choose>
 				<c:when test="${SearchReservation ne null }">
 				<h2>Searched Booking</h2>
@@ -48,14 +52,28 @@
 </tr>
 <c:forEach items="${SearchReservation}" var="booking">
 							<tr>
-								<td align="center"><c:out value="${booking.pnr }"></c:out></td>
-								<td align="center"><c:out value="${booking.flightId }"></c:out></td>
-								<td align="center"><c:out value="${booking.customerId }"></c:out></td>
-								<td align="center"><c:out value="${booking.numberOfSeatsBooked }"></c:out></td>
-								<td align="center"><c:out value="${booking.dateOfBooking }"></c:out></td>
-								<td align="center"><c:out value="${booking.dateOfFlying }"></c:out></td>
-								<td align="center"><c:out value="${booking.totalPrice }"></c:out></td>
-								<td align="center"><c:out value="${booking.currentStatus }"></c:out></td>
+								<td> "${booking.pnr }"</td>
+								<td>  "${booking.flightId}" </td>
+								<td>  "${booking.customerId }"</td>
+								<td> "${booking.numberOfSeatsBooked }"</td>
+								<td><fmt:formatDate value="${booking.dateOfBooking.time}" type = "DATE" pattern="MM/dd/yyyy"/></td>
+								<td><fmt:formatDate value="${booking.dateOfFlying.time}" type = "DATE" pattern="MM/dd/yyyy"/></td>
+								<td> "${booking.totalPrice }"</td>
+								<td> "${booking.currentStatus }"</td>
+								
+								
+								
+								<td><form method="post" action="deleteReservation">
+								<input type="hidden" value= '${booking.pnr}' name="pnr">
+								<input type="hidden" value= '${booking.flightId}' name="flightId">
+								<input type="hidden" value= '${booking.customerId}' name="customerId">
+								<input type="hidden" value= '${booking.numberOfSeatsBooked}' name="numberOfSeatsBooked">
+								<input type="hidden" value= '${booking.dateOfBooking.time}' name="dateOfBooking">
+								<input type="hidden" value= '${booking.dateOfFlying.time}' name="dateOfFlying">
+								<input type="hidden" value= '${booking.totalPrice}' name="totalPrice">
+								<input type="hidden" value= '${booking.currentStatus}' name="currentStatus">
+								<input class="btnLogin" type="submit" value="Delete"/>
+								</form></td>
 </tr>
 
 </c:forEach>
@@ -63,6 +81,8 @@
 </table>
 </c:when>
 </c:choose>
+
+
 
 </body>
 </html>

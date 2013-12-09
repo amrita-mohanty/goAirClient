@@ -52,11 +52,10 @@ public class viewAllEmployees extends HttpServlet {
 		
         request.setAttribute("employees",result );
         
-		if(result != null)
-		{
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/EmployeeView/viewAllEmployees.jsp");
-			dispatcher.forward(request, response);
-		}
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/EmployeeView/viewAllEmployees.jsp");
+		dispatcher.forward(request, response);
+		
 
 	}
 

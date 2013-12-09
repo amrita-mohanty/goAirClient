@@ -68,7 +68,7 @@ public class deleteCustomer extends HttpServlet {
 		else
 		{
 			request.setAttribute("message","Invalid Customer, Try Again !!");
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/GeneralView/viewAllCustomers");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/viewAllCustomers");
 			dispatcher.forward(request, response);
 		}
 		

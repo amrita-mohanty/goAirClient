@@ -61,6 +61,7 @@ public class editDeleteCustomer extends HttpServlet {
 		String address = request.getParameter("address");
 		String city = request.getParameter("city");
 		String state = request.getParameter("state");
+		String zipcode = request.getParameter("zipcode");
 		String dateofbirth =    request.getParameter("dob");
 		String nationality = request.getParameter("nationality");
 		String passportNum = request.getParameter("passportNum");
@@ -68,7 +69,7 @@ public class editDeleteCustomer extends HttpServlet {
 		//System.out.println(dateofbirth);
 		
 		Calendar dob = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("MMMddyyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("E MMM HH:MM:SS Z YYYY");
 		try {
 			dob.setTime(sdf.parse(dateofbirth));
 		} catch (ParseException e) {
@@ -91,13 +92,10 @@ public class editDeleteCustomer extends HttpServlet {
 		customer.setAddress(address);
 		customer.setCity(city);
 		customer.setState(state);
+		customer.setZipcode(zipcode);
 		customer.setDob(dob);
 		customer.setNationality(nationality);
 		customer.setPassportNum(passportNum);
-		
-		
-		
-		
 		
 		String buttonPress = request.getParameter("editDeleteCustomer");
 		request.setAttribute("customer",customer);
@@ -115,17 +113,12 @@ public class editDeleteCustomer extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		
-		
 		if(buttonPress.contains("Delete"))
 		{
 			
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/deleteCustomer");
 			dispatcher.forward(request, response);
 		}
-
-		
-		
-		
 	}
 
 }

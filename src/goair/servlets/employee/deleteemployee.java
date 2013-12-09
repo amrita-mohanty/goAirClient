@@ -69,7 +69,7 @@ public class deleteemployee extends HttpServlet {
 		if(result != -1)
 		{
 			request.setAttribute("message","Deleted Successfully !!");
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/GeneralView/viewAllEmployees");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/EmployeeView/viewAllEmployees");
 			dispatcher.forward(request, response);
 		}
 		

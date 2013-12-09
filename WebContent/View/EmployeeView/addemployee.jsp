@@ -13,15 +13,21 @@
 </style>
 </head>
 <body>
+
+<div id="navbar">
+		<jsp:include page="/View/GeneralView/navbar.jsp"></jsp:include>
+</div>
+<c:if test='<%=role.equalsIgnoreCase("Admin")%>'>
+
+<div id="container" style="height:200% ; top: 50%;">
+		<div id="content" style="height: 200%; top: 50%;">
 <form class="box login" name="login" style="height: auto; top: 50%;" method="post" action="addemployee">
 		<h3>
 			<br> <label>Welcome to Go Airways !! </label>
 		</h3>
-			
-		
-<c:if test ='<%=role.equalsIgnoreCase("Employee") %>'>	
-		
+
 		<fieldset class="boxBody">
+			<label>Employee SSN (XX-XX-XXXX)</label> <input type="text" tabindex="1" name="employeeId">	
 			<label>First Name</label> <input type="text" tabindex="1" name="firstName">	
 			<label>Last Name</label> <input type="text" tabindex="1" name="lastName">
 			<label>Airline Name</label> <input type="text" tabindex="1" name="airlineName">
@@ -280,18 +286,27 @@
 			<input type="submit" class="btnLogin" value="Register" tabindex="3">
 			
 		</footer>
+
+
+
+
+
+</form>
+</div>
+</div>
 </c:if>
 
-<c:if test='<%=role.equalsIgnoreCase("Admin")%>'>
-			<c:out value="Account cannot be created here"></c:out>
-</c:if>
 
 <c:if test='<%=role.equalsIgnoreCase("Customer")%>'>
 			<c:out value="Account cannot be created here, contact Admin"></c:out>
 </c:if>
 
 
-</form>
+<c:if test='<%=role.equalsIgnoreCase("Employee")%>'>
+			<c:out value="Account cannot be created here, contact Admin"></c:out>
+</c:if>
+
+
 
 </body>
 </html>

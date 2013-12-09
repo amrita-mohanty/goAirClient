@@ -6,9 +6,7 @@
 <html>
 <head>
 
-
-
-<title>Delete Customer</title>
+<title>Cancel Reservation</title>
 <meta charset="UTF-8" />
 <style type="text/css">
 <%@ include file="/View/css/reset.css" %>
@@ -19,31 +17,27 @@
 <div id="navbar">
 		<jsp:include page="/View/GeneralView/navbar.jsp"></jsp:include>
 </div>
-<div id="container">
-		<div id="content">
-
 <div>
 <c:if test="${message ne '' }">
 <c:out value="${message }"></c:out>
 </c:if>
 </div>		
 
-<form class="box login" name="DeleteCustomer" style="height: auto; top: 50%;" method="post" action="deleteCustomer">
+<form class="box login" name="DeleteEmployee" style="height: auto; top: 50%;" method="post" action="deleteReservation">
 		
 		
 		<h3>
-			<br> <label>Delete Customer</label>
+			<br> <label>Cancel Resercation</label>
+		
 		</h3>
 		<fieldset class="boxBody">
-			<label>Customer Id</label>
-			<input type="text"  tabindex="2" required name="customerId">
+			<label>PNR</label>
+			<input type="text"  tabindex="2" required name="pnr">
 		</fieldset>
 		
 		<footer>
-			<input type="submit" class="btnLogin" value="Delete" tabindex="3">
+			<input type="submit" class="btnLogin" value="Cancel Reservation" tabindex="3">
 		</footer>
 </form>
-</div>
-</div>
 </body>
 </html>

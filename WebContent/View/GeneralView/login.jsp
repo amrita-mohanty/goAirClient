@@ -24,11 +24,8 @@
 			 Welcome, <%=role %>
 		</h3>
 		
-				
-		
 		<label>Welcome to Go Airways !! </label>
 	
-		
 		<fieldset class="boxBody">
 			<label>Username</label> <input type="text" tabindex="1"
 				placeholder="Enter Email" name="email">
@@ -36,7 +33,6 @@
 			<label>Password</label>
 			<input type="password" placeholder="Enter Email" tabindex="2" name="password">
 		</fieldset>
-		
 		
 		<footer>
 			<!-- <label><input type="checkbox" tabindex="3">Keep me logged in</label>-->

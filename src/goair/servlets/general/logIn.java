@@ -1,5 +1,6 @@
 package goair.servlets.general;
 
+import goair.model.customer.Customer;
 import goair.model.employee.Employee;
 import goair.wsdl.AdminServicesProxy;
 import goair.wsdl.AirlineServicesProxy;
@@ -51,17 +52,45 @@ public class logIn extends HttpServlet {
 
 		sLogger.info("Checking login for username : " + userName + ", password : " + password);
 		employeeProxy.setEndpoint("http://localhost:8080/goAir/services/EmployeeServices");
+		
 		HttpSession session = request.getSession(false);
 		String role = (String) session.getAttribute("role");
 		Employee emp = null ;
+		Customer customer = null;
+				
 		if(role.contains("Admin"))
 		{
 			emp  = employeeProxy.employeeLogin(userName, password);
-			if(emp != null) {
+			
+	
+			if(emp != null && emp.getJobDesc().contains("admin")) {
 				sLogger.info("Valid admin.");
+				session.setAttribute("admin", emp);
 			}
 			else {
 				sLogger.info("Invalid user/password for admin.");
+			}
+			
+		}
+		
+		if(role.contains("Customer"))
+		{
+			customer  = customerProxy.customerLogin(userName, password);
+			session.setAttribute("customer", customer);
+	
+		}
+		
+		if(role.contains("Employee"))
+		{
+			emp  = employeeProxy.employeeLogin(userName, password);
+			
+	
+			if(emp != null && emp.getJobDesc().contains("employee")) {
+				sLogger.info("Valid Employee");
+				request.setAttribute("employee",emp);
+			}
+			else {
+				sLogger.info("Invalid user/password for Employee");
 			}
 		}
 

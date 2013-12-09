@@ -36,6 +36,7 @@ public class roleSelect extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("in servlet");
 		HttpSession session = request.getSession();
+		
 		String role = request.getParameter("role");
 		session.setAttribute("role", role);
 		

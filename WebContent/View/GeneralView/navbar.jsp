@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<% String role = (String)session.getAttribute("role"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,38 +21,17 @@
 					<c:out value="Welcome, ${user.firstName}"></c:out>
 				</h3> </c:if>
 		   </li>
+			
 				
-				
-		   <li>
-
-			<h3>Add a flight</h3>
-			<p>
-			<a href="../FlightView/addFlight.jsp">Add a Flight</a>
-			</p></li>
-			<li>
-			<h3>Update a flight</h3>
-			<p>
-			<a href="../FlightView/updateFlight.jsp">Update a Flight</a>
-			</p>
-			</li>
+		<c:if test ='<%=role.equalsIgnoreCase("Customer") %>'>
+		
 			
 			<li>
-			<h3>View All Reservation</h3>
+			<h3>Edit Customer Profile</h3>
 			<p>
-			<a href="../ReservationView/viewAllReservations.jsp">View All Reservations</a>
+			<a href="../CustomerView/editProfileCustomer">Edit Profile</a>
 			</p></li>
 			
-			<li>
-			<h3>View All Customers</h3>
-			<p>
-			<a href="../CustomerView/viewAllCustomers">View All Customers</a>
-			</p></li>
-			
-			<li>
-			<h3>View All Employees</h3>
-			<p>
-			<a href="../EmployeeView/viewAllEmployees">View All Employees</a>
-			</p></li>
 			
 			<li>
 			<h3>Search Flight</h3>
@@ -65,14 +45,126 @@
 			<p>
 			<a href="../ReservationView/createReservation.jsp">Create Reservation</a>
 			</p></li>
-
-	
 			
-			<li>
-			<h3>Add Employee</h3>
+		
+		</c:if>	
+		
+		
+		<c:if test ='<%=role.equalsIgnoreCase("Admin") %>'>
+		
+			<li><h3>Add Employee</h3>
 			<p>
 			<a href="../EmployeeView/addemployee.jsp">Add Employee</a>
 			</p></li>
+			
+			<li>
+			<h3>View All Employees</h3>
+			<p>
+			<a href="../EmployeeView/viewAllEmployees">View All Employees</a>
+			</p></li>
+			
+				
+			<li>
+			<h3>Delete Employee</h3>
+			<p>
+			<a href="../EmployeeView/deleteemployee.jsp">Delete Employee</a>
+			</p></li>
+			
+			<li>
+			<h3>Update Employee</h3>
+			<p>
+			<a href="../EmployeeView/editemployee.jsp">Update Employee</a>
+			</p></li>
+			
+			
+			
+			<li><h3>Add Customer</h3>
+			<p>
+			<a href="../CustomerView/SignUp.jsp">Add Employee</a>
+			</p></li>
+			
+			
+			<li>
+			<h3>View All Customers</h3>
+			<p>
+			<a href="../CustomerView/viewAllCustomers">View All Customers</a>
+			</p></li>
+			
+				
+			<li>
+			<h3>Delete Customer</h3>
+			<p>
+			<a href="../CustomerView/deleteCustomer.jsp">Delete Employee</a>
+			</p></li>
+			
+			<li>
+			<h3>Update Customer</h3>
+			<p>
+			<a href="../EmployeeView/updateCustomer.jsp">Update Employee</a>
+			</p></li>
+			
+			
+			<li>
+			<h3>Create Reservation</h3>
+			<p>
+			<a href="../ReservationView/createReservation.jsp">Create Reservation</a>
+			</p></li>
+			
+			<li>
+			<h3>View All Reservation</h3>
+			<p>
+			<a href="../ReservationView/viewAllReservations.jsp">View All Reservations</a>
+			</p></li>
+			
+			
+			<li>
+			<h3>Cancel Reservation</h3>
+			<p>
+			<a href="../ReservationView/deleteReservation.jsp">View All Reservations</a>
+			</p></li>
+			
+			
+
+		</c:if>
+		
+		
+		
+		   <li>
+			<h3>Add a flight</h3>
+			<p>
+			<a href="../FlightView/addFlight.jsp">Add a Flight</a>
+			</p></li>
+			<li>
+			<h3>Update a flight</h3>
+			<p>
+			<a href="../FlightView/updateFlight.jsp">Update a Flight</a>
+			</p>
+			</li>
+			
+			
+			
+		
+			
+			
+			<li>
+			<h3>Search Flight</h3>
+			<p>
+			<a href="../FlightView/FindFlight.jsp">Search Flights</a>
+			</p></li>
+			
+			
+		
+
+	
+			
+			
+			
+			
+			
+			
+			
+			
+			
 	</ul>
 </body>
 </html>

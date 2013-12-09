@@ -110,6 +110,11 @@ public class editDeleteEmployee extends HttpServlet {
 		String buttonPress = request.getParameter("editDeleteEmployee");
 		request.setAttribute("employee",employee);
 		
+		
+		request.setAttribute("bDay",hDay);
+		request.setAttribute("bMonth",hMonth);
+		request.setAttribute("bYear",hYear);
+		
 		request.setAttribute("hDay",hDay);
 		request.setAttribute("hMonth",hMonth);
 		request.setAttribute("hYear",hYear);

@@ -170,27 +170,24 @@
     <servlet-name>confirmReservation</servlet-name>
     <url-pattern>/View/ReservationView/confirmReservation</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
-<description></description>
-<display-name>viewAllEmployees</display-name>
-<servlet-name>viewAllEmployees</servlet-name>
-<servlet-class>goair.servlets.employee.viewAllEmployees</servlet-class>
-</servlet>
-<servlet-mapping>
-<servlet-name>viewAllEmployees</servlet-name>
-<url-pattern>/View/EmployeeView/viewAllEmployees</url-pattern>
-</servlet-mapping>
-
-<servlet>
-<description></description>
-<display-name>editDeleteEmployee</display-name>
-<servlet-name>editDeleteEmployee</servlet-name>
-<servlet-class>goair.servlets.employee.editDeleteEmployee</servlet-class>
-</servlet>
-<servlet-mapping>
-<servlet-name>editDeleteEmployee</servlet-name>
-<url-pattern>/View/EmployeeView/editDeleteEmployee</url-pattern>
-</servlet-mapping>
+    <description></description>
+    <display-name>viewAllEmployees</display-name>
+    <servlet-name>viewAllEmployees</servlet-name>
+    <servlet-class>goair.servlets.employee.viewAllEmployees</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewAllEmployees</servlet-name>
+    <url-pattern>/View/EmployeeView/viewAllEmployees</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>editDeleteEmployee</display-name>
+    <servlet-name>editDeleteEmployee</servlet-name>
+    <servlet-class>goair.servlets.employee.editDeleteEmployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editDeleteEmployee</servlet-name>
+    <url-pattern>/View/EmployeeView/editDeleteEmployee</url-pattern>
+  </servlet-mapping>
 </web-app>

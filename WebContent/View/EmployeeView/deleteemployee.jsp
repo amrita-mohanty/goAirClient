@@ -31,8 +31,8 @@
 			<br><label>Enter the Search Crieria </label>
 		</h3>
 		<fieldset class="boxBody">
-			<label>Email Id</label>
-			<input type="text"  tabindex="2" required name="emailId">
+			<label>Employee Id</label>
+			<input type="text"  tabindex="2" required name="employeeId">
 		</fieldset>
 		
 		<footer>
