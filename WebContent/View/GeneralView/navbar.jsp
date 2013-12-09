@@ -80,7 +80,7 @@
 			
 			<li><h3>Add Customer</h3>
 			<p>
-			<a href="../CustomerView/SignUp.jsp">Add Employee</a>
+			<a href="../CustomerView/SignUp.jsp">Add Customer</a>
 			</p></li>
 			
 			

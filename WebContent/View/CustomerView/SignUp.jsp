@@ -25,7 +25,7 @@
 			<br> <label>Welcome to Go Airways !! </label>
 		</h3>	
 		
-<c:if test ='<%=role.equalsIgnoreCase("Customer") %>'>			
+		
 		<fieldset class="boxBody">
 			<label>Customer SSN (XX-XX-XXXX)</label> <input type="text" tabindex="1" name="customerId">	
 			<label>First Name</label> <input type="text" tabindex="1" name="fname">	
@@ -243,16 +243,6 @@
 			<input type="submit" class="btnLogin" value="Register" tabindex="3">
 			
 		</footer>
-</c:if>
-
-<c:if test='<%=role.equalsIgnoreCase("Admin")%>'>
-			<c:out value="Account cannot be created here"></c:out>
-</c:if>
-
-<c:if test='<%=role.equalsIgnoreCase("Employee")%>'>
-			<c:out value="Account cannot be created here, contact Admin"></c:out>
-</c:if>
-
 
 </form>
 

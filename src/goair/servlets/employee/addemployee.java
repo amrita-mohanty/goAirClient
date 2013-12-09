@@ -52,6 +52,8 @@ public class addemployee extends HttpServlet {
 		{
 		AdminServicesProxy adminProxy = new AdminServicesProxy();
 		
+		
+		String employeeId = request.getParameter("employeeId");
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String gender = request.getParameter("gender");
@@ -88,6 +90,7 @@ public class addemployee extends HttpServlet {
 		
 		Employee emp = new Employee();
 		
+		emp.setEmployeeId(employeeId);
 		emp.setFirstName(firstName);
 		emp.setLastName(lastName);
 		emp.setGender(gender);

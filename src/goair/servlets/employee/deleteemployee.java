@@ -50,7 +50,7 @@ public class deleteemployee extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		String role = (String) session.getAttribute("role");
 		
-		int employeeId = Integer.parseInt(request.getParameter("employeeId"));
+		String employeeId = request.getParameter("employeeId");
 		
 		Employee emp = new Employee();
 	

@@ -48,7 +48,7 @@ public class updateCustomer extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		String role = (String) session.getAttribute("role");
 		
-		int customerId = Integer.parseInt(request.getParameter("customerId"));
+		String customerId = request.getParameter("customerId");
 		String password = request.getParameter("password");
 		String fName = request.getParameter("firstName");
 		String lName = request.getParameter("lastName");

@@ -47,6 +47,7 @@ public class searchemployee extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 AdminServicesProxy adminProxy = new AdminServicesProxy();
 		
+		String employeeId = request.getParameter("employeeId");
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String gender = request.getParameter("gender");
@@ -83,6 +84,7 @@ AdminServicesProxy adminProxy = new AdminServicesProxy();
 		
 		Employee emp = new Employee();
 		
+		emp.setEmployeeId(employeeId);
 		emp.setFirstName(firstName);
 		emp.setLastName(lastName);
 		emp.setGender(gender);
@@ -108,6 +110,13 @@ AdminServicesProxy adminProxy = new AdminServicesProxy();
 		
 		
 		Employee[] result = adminProxy.searchEmployeesForAdmin(searchParameters);
+		
+
+        request.setAttribute("employees",result );
+        
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/EmployeeView/viewAllEmployees.jsp");
+		dispatcher.forward(request, response);
 		
 			
 	}

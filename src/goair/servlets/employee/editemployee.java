@@ -95,7 +95,7 @@ public class editemployee extends HttpServlet {
 	
 		Employee emp = new Employee();
 
-		emp.setEmployeeId(Integer.parseInt(employeeId));
+		emp.setEmployeeId(employeeId);
 		emp.setPassword(password);
 		emp.setFirstName(firstName);
 		emp.setLastName(lastName);

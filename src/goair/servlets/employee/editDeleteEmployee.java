@@ -91,7 +91,7 @@ public class editDeleteEmployee extends HttpServlet {
 	
 		Employee employee = new Employee();
 
-		employee.setEmployeeId(Integer.parseInt(employeeId));
+		employee.setEmployeeId(employeeId);
 		employee.setPassword(password);
 		employee.setFirstName(firstName);
 		employee.setLastName(lastName);

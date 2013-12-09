@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -44,7 +45,7 @@ public class searchCustomer extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AdminServicesProxy adminProxy = new AdminServicesProxy();
 		
-		int customerId = Integer.parseInt(request.getParameter("customerId"));
+		String customerId = request.getParameter("customerId");
 		String fname = request.getParameter("fname");
 		String lname = request.getParameter("lname");
 		String gender = request.getParameter("gender");
@@ -98,7 +99,14 @@ public class searchCustomer extends HttpServlet {
 		
 		
 		Customer[] result = adminProxy.searchCustomersForAdmin(searchParameters);
-		
+		 request.setAttribute("customers",result );
+	        
+	        
+			if(result != null)
+			{
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/viewAllCustomers.jsp");
+				dispatcher.forward(request, response);
+			}
 		
 		
 		

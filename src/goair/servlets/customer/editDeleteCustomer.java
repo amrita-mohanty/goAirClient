@@ -83,7 +83,7 @@ public class editDeleteCustomer extends HttpServlet {
 	
 		Customer customer = new Customer();
 
-		customer.setCustomerId(Integer.parseInt(customerId));
+		customer.setCustomerId(customerId);
 		customer.setPassword(password);
 		customer.setFirstName(firstName);
 		customer.setLastName(lastName);

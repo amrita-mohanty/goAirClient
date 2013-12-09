@@ -54,28 +54,11 @@ public class viewAllCustomers extends HttpServlet {
 
 		Customer[] result = adminProxy.getAllCustomersForAdmin();
 		
-		String[] dateBirth = new String[result.length];
-		
-		for(int i = 0;i<result.length ;i++)
-		{
-			Calendar dob = result[i].getDob();
-			int bDay=dob.get(Calendar.DATE);
-		    int bMonth=dob.get(Calendar.MONTH);
-		    int bYear=dob.get(Calendar.YEAR);
-		    
-		    dateBirth[i]= bMonth+"/"+bDay+"/"+bYear;
-		    
-		    System.out.println( dateBirth[i]);
-		}
-
         request.setAttribute("customers",result );
-        request.setAttribute("dateBirth",dateBirth );
-        
-		if(result != null)
-		{
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/viewAllCustomers.jsp");
-			dispatcher.forward(request, response);
-		}
+     
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/viewAllCustomers.jsp");
+		dispatcher.forward(request, response);
+		
 
 	}
 

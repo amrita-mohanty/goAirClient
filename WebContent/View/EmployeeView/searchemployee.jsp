@@ -22,6 +22,7 @@
 			<br><label>Enter the Search Crieria </label>
 		</h3>	
 			<fieldset class="boxBody">
+			<label>Employee SSN (XX-XX-XXXX)</label> <input type="text" tabindex="1" name="employeeId">	
 			<label>First Name</label> <input type="text" tabindex="1" name="firstName">	
 			<label>Last Name</label> <input type="text" tabindex="1" name="lastName">
 			<label>Airline Name</label> <input type="text" tabindex="1" name="airlineName">
