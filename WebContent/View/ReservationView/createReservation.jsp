@@ -60,10 +60,11 @@ return false;
 		</h3>
 		<fieldset class="boxBody">
 			<label>Customer Id</label> <input type="text" tabindex="1" name="customerId" value = "${customerId}">	
-			<label>Flight Id</label> <input type="text" tabindex="1" name="flightId">
+			<label>Flight Id</label> <c:out value = "${flightId}"/>
+			<input type="hidden" value = "${flightId}" tabindex="1" name="flightId">
 			<label>Number of seats to reserve</label><input type="text" tabindex="1" name="numberOfSeatsBooked">
 			<!-- <label>Date of Booking </label> <input type="text" tabindex="1" name="dateOfBooking" id="datepick"> -->
-			<label>Date of Flying </label> <input type="text" tabindex="1" name="dateOfFlying" id="datepick2">
+			<input value = "${flyingdate}" type="text" tabindex="1" name="dateOfFlying" id="datepick2">
 			<!-- <label>Credit Card Number</label> <input type="text" tabindex="1" name="creditCardNumber">
 			<label>Total Price</label> <input type="text" tabindex="1" name="totalPrice">
 			 -->		
@@ -84,10 +85,11 @@ return false;
 		</h3>
 		<fieldset class="boxBody">
 			<label>Customer Id</label> <input type="text" tabindex="1" name="customerId" value = "${customerId}">	
-			<label>Flight Id</label> <input type="text" tabindex="1" name="flightId">
+			<label>Flight Id</label> <c:out value = "${flightId}"/>
+			<input type="hidden" value = "${flightId}" tabindex="1" name="flightId">
 			<label>Number of seats to reserve</label><input type="text" tabindex="1" name="numberOfSeatsBooked">
 			<!-- <label>Date of Booking </label> <input type="text" tabindex="1" name="dateOfBooking" id="datepick"> -->
-			<label>Date of Flying </label> <input type="text" tabindex="1" name="dateOfFlying" id="datepick2">
+		<input value = "${flyingdate}" type="text" tabindex="1" name="dateOfFlying" id="datepick2">
 			<!-- <label>Credit Card Number</label> <input type="text" tabindex="1" name="creditCardNumber">
 			<label>Total Price</label> <input type="text" tabindex="1" name="totalPrice">
 			 -->		
@@ -108,10 +110,11 @@ return false;
 		<fieldset class="boxBody">
 			<label>Customer Id</label> <c:out value = "${customerId}"/>
 			
-			<input type="hidden" tabindex="1" name="customerId" value = "${customerId}">	
+			<input type="hidden" tabindex="1" name="customerId" value = "${customerId}">
+				
 			<label>Flight Id</label> <c:out value = "${flightId}"/>
+			<input type="hidden" value = "${flightId}" tabindex="1" name="flightId">
 			
-			<input type="hidden" tabindex="1" name="flightId">
 			<label>Number of seats to reserve</label><input type="text" tabindex="1" name="numberOfSeatsBooked">
 			<!-- <label>Date of Booking </label> <input type="text" tabindex="1" name="dateOfBooking" id="datepick"> -->
 			<label>Date of Flying </label> 

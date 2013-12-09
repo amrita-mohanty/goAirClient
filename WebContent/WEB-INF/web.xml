@@ -158,7 +158,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>createReservation</servlet-name>
-    <url-pattern>/View/ReservationView/createReservation</url-pattern>
+    <url-pattern>/View/FlightView/createReservation</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -168,7 +168,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>confirmReservation</servlet-name>
-    <url-pattern>/View/ReservationView/confirmReservation</url-pattern>
+    <url-pattern>/View/FlightView/confirmReservation</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

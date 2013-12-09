@@ -222,7 +222,7 @@ public class ActionFindFlight extends HttpServlet {
 			request.setAttribute("customerId",customer.getCustomerId() );
 			}
 			
-			request.setAttribute("flightId",cFligtId );
+			request.setAttribute("flightId",flightId);
 			request.setAttribute("flyingdate",flyingdate );
 			
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/ReservationView/createReservation.jsp");

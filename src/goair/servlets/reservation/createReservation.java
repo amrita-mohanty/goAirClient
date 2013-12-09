@@ -90,7 +90,7 @@ public class createReservation extends HttpServlet {
 	   request.setAttribute("dateFlying",dateFlying);
 	   
 	   
-	   RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("../View/ReservationView/creditCardValidation.jsp");
+	   RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/ReservationView/creditCardValidation.jsp");
 	   dispatcher.forward(request, response);
 	   
 	}

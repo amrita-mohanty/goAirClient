@@ -101,7 +101,7 @@
 			<label>Zip Code</label> <input type="text" tabindex="1" name="zipcode">
 			
 			<label>Date of Birth</label>
-			<select name="year" class="cjComboBox">
+			<select name="month" class="cjComboBox">
 				    <option value=""></option>
 					<option value="Jan">January</option>
 					<option value="Feb">Febraury</option>

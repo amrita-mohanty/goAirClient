@@ -45,13 +45,7 @@
 			<a href="../FlightView/FindFlight.jsp">Search Flights</a>
 			</p></li>
 			
-			
-			<li>
-			<h3>Create Reservation</h3>
-			<p>
-			<a href="../ReservationView/createReservation.jsp">Create Reservation</a>
-			</p></li>
-			
+
 			
 
 		</c:if>	
@@ -139,11 +133,7 @@
 			</p></li>
 			
 			
-			<li>
-			<h3>Create Reservation</h3>
-			<p>
-			<a href="../ReservationView/createReservation.jsp">Create Reservation</a>
-			</p></li>
+	
 			
 			<li>
 			<h3>View All Reservation</h3>
@@ -208,11 +198,6 @@
 			</p></li>
 			
 			
-			<li>
-			<h3>Create Reservation</h3>
-			<p>
-			<a href="../ReservationView/createReservation.jsp">Create Reservation</a>
-			</p></li>
 			
 			<li>
 			<h3>View All Reservation</h3>
@@ -233,7 +218,7 @@
 		   <li>
 			<h3>Sign Out</h3>
 			<p>
-			<a href="../GeneralView/signOut">Edit Profile</a>
+			<a href="../GeneralView/signOut">Sign Out</a>
 			</p></li>
 			
 			

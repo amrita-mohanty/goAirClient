@@ -115,9 +115,7 @@ public class SignUp extends HttpServlet {
 
 		if(result!=-1)
 		{	
-			
 
-		request.setAttribute("message",result);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/GeneralView/welcome.jsp");
 		dispatcher.forward(request, response);
 		}
