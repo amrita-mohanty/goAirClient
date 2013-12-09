@@ -184,7 +184,7 @@
 						<tr>
 							<th>Flight ID</th>
 							<th>Flight Name</th>
-							<th >Seat Available</th>
+							<th >Total Seats</th>
 							<c:choose>
 								<c:when
 									test="${(not empty user.firstName) && (user.role ne 'admin')}">
@@ -201,7 +201,7 @@
 							<tr>
 								<td align="center">${flight.flightId }</td>
 								<td align="center">${flight.flightName }</td>
-								<td align="center">${flight.seatsAvailable }</td>
+								<td align="center">${flight.totalSeats }</td>
 			
 									<td align="center" style="width:350px;">
 										<div style="float:left;width:100px;">

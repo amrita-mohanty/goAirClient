@@ -25,7 +25,7 @@
 		   <li>
 			<h3>Home Page</h3>
 			<p>
-			<a href="../GeneralView/welcome.jsp">Edit Profile</a>
+			<a href="../GeneralView/welcome.jsp">Home Page</a>
 			</p></li>
 			
 				
@@ -66,7 +66,7 @@
 			<li>
 			<h3>View All Employees</h3>
 			<p>
-			<a href="../EmployeeView/viewAllEmployees">View All Employees</a>
+			<a href="../EmployeeView/viewAllEmployees.jsp">View All Employees</a>
 			</p></li>
 			
 				
@@ -98,7 +98,7 @@
 			<li>
 			<h3>View All Customers</h3>
 			<p>
-			<a href="../CustomerView/viewAllCustomers">View All Customers</a>
+			<a href="../CustomerView/viewAllCustomers.jsp">View All Customers</a>
 			</p></li>
 			
 				

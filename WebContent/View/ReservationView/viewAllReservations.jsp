@@ -2,11 +2,11 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<% String role = (String)session.getAttribute("role"); %>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Find Booking</title>
+<title>Find Reservations</title>
 <meta charset="UTF-8" />
 <style type="text/css">
 <%@ include file="/View/css/reset.css" %>
@@ -15,6 +15,11 @@
 </head>
 
 <body>
+<div id="navbar">
+		<jsp:include page="/View/GeneralView/navbar.jsp"></jsp:include>
+</div>
+<div id="container">
+		<div id="content">
 
 			<h2>Search Reservation</h2>
 			<h3>
@@ -81,7 +86,8 @@
 </table>
 </c:when>
 </c:choose>
-
+</div>
+</div>
 
 
 </body>
