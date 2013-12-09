@@ -70,6 +70,8 @@ public class FindFlight extends HttpServlet {
 	request.setAttribute("savedName", request.getParameter("flightName"));
 	
 	objFlight.setAirlineName(request.getParameter("airlineName"));
+	
+	
 	request.setAttribute("savedAirline", request.getParameter("airlineName"));
 	
 	objFlight.setSource(request.getParameter("source"));
@@ -78,7 +80,10 @@ public class FindFlight extends HttpServlet {
 	objFlight.setDestination(request.getParameter("destination"));
 	request.setAttribute("savedDestination", request.getParameter("destination"));
 	
+	
 	String flydate = request.getParameter("flyingdate");
+	
+	
 	Calendar newFlyDate = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("MM/DD/YYYY");
 	
@@ -100,6 +105,7 @@ public class FindFlight extends HttpServlet {
 	searchedFlight = adminproxy.searchFlightsForAdmin(objFlight);
 	
 	request.setAttribute("SearchFlight", searchedFlight);
+	
 	String nextJSP = "/View/FlightView/FindFlight.jsp";
 	RequestDispatcher dispatcher = getServletContext()
 			.getRequestDispatcher(nextJSP);

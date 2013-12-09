@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<% String role = (String)session.getAttribute("role"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -48,11 +49,118 @@
 					</tr>	
 					<tr>
 						<td><b>Source</b></td>
-						<td><input type="text" name="source" ></td>
+						<td><select name="source" class="cjComboBox" >
+					<option value="">Pick your state</option>
+					<option value="AL">Alabama</option>
+					<option value="AK">Alaska</option>
+					<option value="AZ">Arizona</option>
+					<option value="AR">Arkansas</option>
+					<option value="CA">California</option>
+					<option value="CO">Colorado</option>
+					<option value="CT">Connecticut</option>
+					<option value="DE">Delaware</option>
+					<option value="DC">District of Columbia</option>
+					<option value="FL">Florida</option>
+					<option value="GA">Georgia</option>
+					<option value="HI">Hawaii</option>
+					<option value="ID">Idaho</option>
+					<option value="IL">Illinois</option>
+					<option value="IN">Indiana</option>
+					<option value="IA">Iowa</option>
+					<option value="KS">Kansas</option>
+					<option value="KY">Kentucky</option>
+					<option value="LA">Louisiana</option>
+					<option value="ME">Maine</option>
+					<option value="MD">Maryland</option>
+					<option value="MA">Massachusetts</option>
+					<option value="MI">Michigan</option>
+					<option value="MN">Minnesota</option>
+					<option value="MS">Mississippi</option>
+					<option value="MO">Missouri</option>
+					<option value="MT">Montana</option>
+					<option value="NE">Nebraska</option>
+					<option value="NV">Nevada</option>
+					<option value="NH">New Hampshire</option>
+					<option value="NJ">New Jersey</option>
+					<option value="NM">New Mexico</option>
+					<option value="NY">New York</option>
+					<option value="NC">North Carolina</option>
+					<option value="ND">North Dakota</option>
+					<option value="OH">Ohio</option>
+					<option value="OK">Oklahoma</option>
+					<option value="OR">Oregon</option>
+					<option value="PA">Pennsylvania</option>
+					<option value="RI">Rhode Island</option>
+					<option value="SC">South Carolina</option>
+					<option value="SD">South Dakota</option>
+					<option value="TN">Tennessee</option>
+					<option value="TX">Texas</option>
+					<option value="UT">Utah</option>
+					<option value="VT">Vermont</option>
+					<option value="VA">Virginia</option>
+					<option value="WA">Washington</option>
+					<option value="WV">West Virginia</option>
+					<option value="WI">Wisconsin</option>
+					<option value="WY">Wyoming</option>
+				</select>
+			</td>
 					</tr>
 					<tr>
 						<td><b>Destination</b></td>
-						<td><input type="text" name="destination" ></td>
+						<td><select name="destination" class="cjComboBox" >
+					<option value="">Pick your state</option>
+					<option value="AL">Alabama</option>
+					<option value="AK">Alaska</option>
+					<option value="AZ">Arizona</option>
+					<option value="AR">Arkansas</option>
+					<option value="CA">California</option>
+					<option value="CO">Colorado</option>
+					<option value="CT">Connecticut</option>
+					<option value="DE">Delaware</option>
+					<option value="DC">District of Columbia</option>
+					<option value="FL">Florida</option>
+					<option value="GA">Georgia</option>
+					<option value="HI">Hawaii</option>
+					<option value="ID">Idaho</option>
+					<option value="IL">Illinois</option>
+					<option value="IN">Indiana</option>
+					<option value="IA">Iowa</option>
+					<option value="KS">Kansas</option>
+					<option value="KY">Kentucky</option>
+					<option value="LA">Louisiana</option>
+					<option value="ME">Maine</option>
+					<option value="MD">Maryland</option>
+					<option value="MA">Massachusetts</option>
+					<option value="MI">Michigan</option>
+					<option value="MN">Minnesota</option>
+					<option value="MS">Mississippi</option>
+					<option value="MO">Missouri</option>
+					<option value="MT">Montana</option>
+					<option value="NE">Nebraska</option>
+					<option value="NV">Nevada</option>
+					<option value="NH">New Hampshire</option>
+					<option value="NJ">New Jersey</option>
+					<option value="NM">New Mexico</option>
+					<option value="NY">New York</option>
+					<option value="NC">North Carolina</option>
+					<option value="ND">North Dakota</option>
+					<option value="OH">Ohio</option>
+					<option value="OK">Oklahoma</option>
+					<option value="OR">Oregon</option>
+					<option value="PA">Pennsylvania</option>
+					<option value="RI">Rhode Island</option>
+					<option value="SC">South Carolina</option>
+					<option value="SD">South Dakota</option>
+					<option value="TN">Tennessee</option>
+					<option value="TX">Texas</option>
+					<option value="UT">Utah</option>
+					<option value="VT">Vermont</option>
+					<option value="VA">Virginia</option>
+					<option value="WA">Washington</option>
+					<option value="WV">West Virginia</option>
+					<option value="WI">Wisconsin</option>
+					<option value="WY">Wyoming</option>
+				</select></td>
 					</tr>
                     
                     <tr>
@@ -108,9 +216,9 @@
 												  <input type="hidden" 
 												     name="destination" value="${flight.destination}" />    
 												<input type="hidden"
-													name="arrivalTime" value="${flight.arrivalTime}" /> 
+													name="arrivalTime" value="${flight.arrivalTime.time}" /> 
 												<input type="hidden" 
-												name="deptTime" value="${flight.departureTime}" />	
+												name="deptTime" value="${flight.departureTime.time}" />	
 												<input type="hidden" 
 												name="airlineName" value="${flight.airlineName}" />	
 												<input type="hidden" 
@@ -120,12 +228,13 @@
 												<input type="hidden" 
 												name="totalSeats" value="${flight.totalSeats}" />
 												
-													<!--
+												
 												<input type="hidden" 
 												name="flyingEndDate" value="${flight.flyingEndDate.time}" />		
 												<input type="hidden" 
 												name="flyingStartDate" value="${flight.flyingStartDate.time}" />		
-												-->
+											
+											<c:if test ='<%=role.equalsIgnoreCase("Admin") %>'>
 												<input type="submit"  style="width: 100px;"
 													name="actionFlight" value="Update" /> 
 													<input type="submit"  style="width: 100px;"
@@ -134,6 +243,27 @@
 													name="actionFlight" value="View Passengers" />
 													<input type="submit"  style="width: 100px;"
 													name="actionFlight" value="View Crew Details" />
+														<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="Reserve"/> 
+											</c:if>
+											
+												<c:if test ='<%=role.equalsIgnoreCase("Employee") %>'>
+												<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="Update" /> 
+													<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="Delete" /> 
+													<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="View Passengers" />
+													<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="View Crew Details" />
+														<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="Reserve"/> 
+											</c:if>
+											
+											<c:if test ='<%=role.equalsIgnoreCase("Customer") %>'>
+											<input type="submit"  style="width: 100px;"
+													name="actionFlight" value="Reserve" /> 	
+											</c:if>	
 											</form>
 											</div>
 					                   </td>

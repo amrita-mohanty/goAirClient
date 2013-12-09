@@ -82,23 +82,6 @@ AdminServicesProxy adminProxy = new AdminServicesProxy();
 			e.printStackTrace();
 		} 
 		
-		Employee emp = new Employee();
-		
-		emp.setEmployeeId(employeeId);
-		emp.setFirstName(firstName);
-		emp.setLastName(lastName);
-		emp.setGender(gender);
-		emp.setAddress(address);
-		emp.setCity(city);
-		emp.setState(state);
-		emp.setZipcode(zipcode);
-		emp.setDob(dob);
-	    emp.setAirlineName(airlineName);
-	    emp.setJobDesc(jobDesc);
-	    emp.setPosition(position);
-	    emp.setHireDate(hireDate);
-		emp.setEmailId(emailId);
-		emp.setPassword(password);
 		
 		PrintWriter out = response.getWriter();	
 		adminProxy.setEndpoint("http://localhost:8080/goAir/services/AdminServices");
@@ -106,9 +89,24 @@ AdminServicesProxy adminProxy = new AdminServicesProxy();
 		HttpSession session = request.getSession(false);
 		String role = (String) session.getAttribute("role");
 		
-		SearchParametersForEmployees searchParameters = null;
+		SearchParametersForEmployees searchParameters = new SearchParametersForEmployees() ;
 		
-		
+		searchParameters.setEmployeeId(employeeId);
+		searchParameters.setFirstName(firstName);
+		searchParameters.setLastName(lastName);
+		searchParameters.setGender(gender);
+		searchParameters.setAddress(address);
+		searchParameters.setCity(city);
+		searchParameters.setState(state);
+		searchParameters.setZipcode(zipcode);
+		searchParameters.setDob(dob);
+		searchParameters.setAirlineName(airlineName);
+		searchParameters.setJobDesc(jobDesc);
+		searchParameters.setPosition(position);
+		searchParameters.setHireDate(hireDate);
+		searchParameters.setEmailId(emailId);
+		searchParameters.setPassword(password);
+
 		Employee[] result = adminProxy.searchEmployeesForAdmin(searchParameters);
 		
 

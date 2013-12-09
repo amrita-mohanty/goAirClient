@@ -55,61 +55,62 @@
 			<label>Departure Time</label> 
 			<select name="deptTime" class="cjComboBox" >
 			<option value="12:00:00">12 AM</option>
-	<option value="1:00:00">1 AM</option>
-	<option value="2:00:00">2 AM</option>
-	<option value="3:00:00">3 AM</option>
-	<option value="4:00:00"">4 AM</option>
-	<option value="5:00:00"">5 AM</option>
-	<option value="6:00:00"">6 AM</option>
-	<option value="7:00:00"">7 AM</option>
-	<option value="8:00:00"">8 AM</option>
-	<option value="9:00:00">9 AM</option>
-	<option value="10:00:00">10 AM</option>
-	<option value="11:00:00"">11 AM</option>
-	<option value="12:00:00"">12 PM</option>
-	<option value="13:00:00"">1 PM</option>
-	<option value="14:00:00"">2 PM</option>
-	<option value="15:00:00"">3 PM</option>
-	<option value="16:00:00"">4 PM</option>
-	<option value="17:00:00"">5 PM</option>
-	<option value="18:00:00"">6 PM</option>
-	<option value="19:00:00"">7 PM</option>
-	<option value="20:00:00"">8 PM</option>
-	<option value="21:00:00"">9 PM</option>
-	<option value="22:00:00"">10 PM</option>
-    <option value="23:00:00"">11 PM</option>
+	<option value="12:00:00"  ${DepartureTime == '12:00:00' ? 'selected' : ''}>12 AM</option>
+	<option value="1:00:00"   ${DepartureTime == '1:00:00' ? 'selected' : ''}>1 AM</option>
+	<option value="2:00:00"  ${DepartureTime == '2:00:00' ? 'selected' : ''}>2 AM</option>
+	<option value="3:00:00"  ${DepartureTime == '3:00:00' ? 'selected' : ''}>3 AM</option>
+	<option value="4:00:00" ${DepartureTime == '4:00:00' ? 'selected' : ''}>4 AM</option>
+	<option value="5:00:00" ${DepartureTime == '5:00:00' ? 'selected' : ''}>5 AM</option>
+	<option value="6:00:00" ${DepartureTime == '6:00:00' ? 'selected' : ''}>6 AM</option>
+	<option value="7:00:00" ${DepartureTime == '7:00:00' ? 'selected' : ''}>7 AM</option>
+	<option value="8:00:00" ${DepartureTime == '8:00:00' ? 'selected' : ''}>8 AM</option>
+	<option value="9:00:00" ${DepartureTime == '9:00:00' ? 'selected' : ''}>9 AM</option>
+	<option value="10:00:00" ${DepartureTime == '10:00:00' ? 'selected' : ''}>10 AM</option>
+	<option value="11:00:00" ${DepartureTime == '11:00:00' ? 'selected' : ''}>11 AM</option>
+	<option value="12:00:00" ${DepartureTime == '12:00:00' ? 'selected' : ''}>12 PM</option>
+	<option value="13:00:00" ${DepartureTime == '13:00:00' ? 'selected' : ''}>1 PM</option>
+	<option value="14:00:00" ${DepartureTime == '14:00:00' ? 'selected' : ''}>2 PM</option>
+	<option value="15:00:00" ${DepartureTime == '15:00:00' ? 'selected' : ''}>3 PM</option>
+	<option value="16:00:00" ${DepartureTime == '16:00:00' ? 'selected' : ''}>4 PM</option>
+	<option value="17:00:00" ${DepartureTime == '17:00:00' ? 'selected' : ''}>5 PM</option>
+	<option value="18:00:00" ${DepartureTime == '18:00:00' ? 'selected' : ''}>6 PM</option>
+	<option value="19:00:00" ${DepartureTime == '19:00:00' ? 'selected' : ''}>7 PM</option>
+	<option value="20:00:00" ${DepartureTime == '20:00:00' ? 'selected' : ''}>8 PM</option>
+	<option value="21:00:00" ${DepartureTime == '21:00:00' ? 'selected' : ''}>9 PM</option>
+	<option value="22:00:00" ${DepartureTime == '22:00:00' ? 'selected' : ''}>10 PM</option>
+    <option value="23:00:00" ${DepartureTime == '23:00:00' ? 'selected' : ''}>11 PM</option>
 	</select>
 	
 <label>Arrival Time</label>
 	<select name="arrivalTime" class="cjComboBox" >
-    <option value="12:00:00">12 AM</option>
-	<option value="1:00:00">1 AM</option>
-	<option value="2:00:00">2 AM</option>
-	<option value="3:00:00">3 AM</option>
-	<option value="4:00:00"">4 AM</option>
-	<option value="5:00:00"">5 AM</option>
-	<option value="6:00:00"">6 AM</option>
-	<option value="7:00:00"">7 AM</option>
-	<option value="8:00:00"">8 AM</option>
-	<option value="9:00:00">9 AM</option>
-	<option value="10:00:00">10 AM</option>
-	<option value="11:00:00"">11 AM</option>
-	<option value="12:00:00"">12 PM</option>
-	<option value="13:00:00"">1 PM</option>
-	<option value="14:00:00"">2 PM</option>
-	<option value="15:00:00"">3 PM</option>
-	<option value="16:00:00"">4 PM</option>
-	<option value="17:00:00"">5 PM</option>
-	<option value="18:00:00"">6 PM</option>
-	<option value="19:00:00"">7 PM</option>
-	<option value="20:00:00"">8 PM</option>
-	<option value="21:00:00"">9 PM</option>
-	<option value="22:00:00"">10 PM</option>
-    <option value="23:00:00"">11 PM</option>
+    <option value="12:00:00"  ${ArrivalTime == '12:00:00' ? 'selected' : ''}>12 AM</option>
+	<option value="1:00:00"   ${ArrivalTime == '1:00:00' ? 'selected' : ''}>1 AM</option>
+	<option value="2:00:00"  ${ArrivalTime == '2:00:00' ? 'selected' : ''}>2 AM</option>
+	<option value="3:00:00"  ${ArrivalTime == '3:00:00' ? 'selected' : ''}>3 AM</option>
+	<option value="4:00:00" ${ArrivalTime == '4:00:00' ? 'selected' : ''}>4 AM</option>
+	<option value="5:00:00" ${ArrivalTime == '5:00:00' ? 'selected' : ''}>5 AM</option>
+	<option value="6:00:00" ${ArrivalTime == '6:00:00' ? 'selected' : ''}>6 AM</option>
+	<option value="7:00:00" ${ArrivalTime == '7:00:00' ? 'selected' : ''}>7 AM</option>
+	<option value="8:00:00" ${ArrivalTime == '8:00:00' ? 'selected' : ''}>8 AM</option>
+	<option value="9:00:00" ${ArrivalTime == '9:00:00' ? 'selected' : ''}>9 AM</option>
+	<option value="10:00:00" ${ArrivalTime == '10:00:00' ? 'selected' : ''}>10 AM</option>
+	<option value="11:00:00" ${ArrivalTime == '11:00:00' ? 'selected' : ''}>11 AM</option>
+	<option value="12:00:00" ${ArrivalTime == '12:00:00' ? 'selected' : ''}>12 PM</option>
+	<option value="13:00:00" ${ArrivalTime == '13:00:00' ? 'selected' : ''}>1 PM</option>
+	<option value="14:00:00" ${ArrivalTime == '14:00:00' ? 'selected' : ''}>2 PM</option>
+	<option value="15:00:00" ${ArrivalTime == '15:00:00' ? 'selected' : ''}>3 PM</option>
+	<option value="16:00:00" ${ArrivalTime == '16:00:00' ? 'selected' : ''}>4 PM</option>
+	<option value="17:00:00" ${ArrivalTime == '17:00:00' ? 'selected' : ''}>5 PM</option>
+	<option value="18:00:00" ${ArrivalTime == '18:00:00' ? 'selected' : ''}>6 PM</option>
+	<option value="19:00:00" ${ArrivalTime == '19:00:00' ? 'selected' : ''}>7 PM</option>
+	<option value="20:00:00" ${ArrivalTime == '20:00:00' ? 'selected' : ''}>8 PM</option>
+	<option value="21:00:00" ${ArrivalTime == '21:00:00' ? 'selected' : ''}>9 PM</option>
+	<option value="22:00:00" ${ArrivalTime == '22:00:00' ? 'selected' : ''}>10 PM</option>
+    <option value="23:00:00" ${ArrivalTime == '23:00:00' ? 'selected' : ''}>11 PM</option>
 	</select>
 
-			<label>Start Date <input type="text" name="startdatepick" id="startdatepick" ></label>
-			<label>End Date <input type="text" name="enddatepick" id="enddatepick" ></label>
+			<label>Start Date <input value = "${startDate}" type="text" name="startdatepick" id="startdatepick" ></label>
+			<label>End Date <input value = "${endDate}" type="text" name="enddatepick" id="enddatepick" ></label>
 			<label>Total Seats </label> <input type="text" tabindex="1"   value = "${flight.totalSeats}" name ="totalseats">
 			<label>Days of Week</label>
 			<input type="checkbox" name="dayofweek" value="Monday">Monday<br> 

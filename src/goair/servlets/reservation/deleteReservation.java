@@ -98,11 +98,8 @@ public class deleteReservation extends HttpServlet {
 			reservation.setTotalPrice(totalPrice);
 			reservation.setCurrentStatus(currentStatus);
 			reservation.setTotalPrice(totalPrice);
-		
-		
-		
+
 		int result = adminProxy.cancelReservation(reservation);
-		
 
 		if(result == -1)
 		{

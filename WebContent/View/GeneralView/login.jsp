@@ -12,13 +12,8 @@
 <%@ include file="/View/css/reset.css" %>
 <%@ include file="/View/css/structure.css" %>
 </style>
-
-
 </head>
-
 <body>
-
-
 	<form class="box login" name="login" method="post" action="logIn">
 		<h3>
 			 Welcome, <%=role %>
@@ -31,7 +26,7 @@
 				placeholder="Enter Email" name="email">
 			<!-- <label><a href="#" class="rLink" tabindex="5">Forget your password?</a>Password</label> -->
 			<label>Password</label>
-			<input type="password" placeholder="Enter Email" tabindex="2" name="password">
+			<input type="password" placeholder="Enter Password" tabindex="2" name="password">
 		</fieldset>
 		
 		<footer>

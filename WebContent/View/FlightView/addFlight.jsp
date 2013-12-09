@@ -46,7 +46,6 @@
 		<fieldset class="boxBody">
 			<label>Flight Name</label> <input type="text" tabindex="1" name="flightName">	
 			<label>Airline Name</label> <input type="text" tabindex="1" name="airlineName">
-			<label>Flight ID</label> <input type="text" tabindex="1" name="flightId">
 			<label>Source</label> 
 			<select name="source" class="cjComboBox" >
 					<option value="">Pick your state</option>
@@ -221,8 +220,7 @@
 			<label>End Date <input type="text" name="enddatepick" id="enddatepick" ></label>
 			<label>Flight Status </label> <input type="text" tabindex="1" name ="flightstatus">
 			<label>Total Seats </label> <input type="text" tabindex="1" name ="totalseats">
-			<label>Seats Reserved</label> <input type="text" tabindex="1" name ="seatreserved">
-			<label>Seats Available</label> <input type="text" tabindex="1" name ="seatavailable">
+		
 			<label>Ticket Price</label> <input type="text" tabindex="1" name ="ticketprice">
 			<label>Days of Week</label>
 			<input type="checkbox" name="dayofweek" value="Monday">Monday<br> 

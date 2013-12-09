@@ -61,7 +61,7 @@ public class deleteCustomer extends HttpServlet {
 		if(result != -1)
 		{
 			request.setAttribute("message","Deleted Successfully !!");
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/GeneralView/viewAllCustomers");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/viewAllCustomers");
 			dispatcher.forward(request, response);
 		}
 		

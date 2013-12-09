@@ -72,6 +72,38 @@ public class DeleteFlight extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		AdminServicesProxy adminProxy = new AdminServicesProxy();
+		PrintWriter out = response.getWriter();	
+		adminProxy.setEndpoint("http://localhost:8080/goAir/services/AdminServices");
+		
+		HttpSession session = request.getSession(false);
+		String role = (String) session.getAttribute("role");
+		
+		int flightId = Integer.parseInt(request.getParameter("flightId"));
+		
+		Flight flight = new Flight();
+	
+		flight.setFlightId(flightId);
+
+		int result = adminProxy.deleteFlight(flight);
+		
+		//System.out.println("customer to delete is "+customerId);
+
+		if(result != -1)
+		{
+			request.setAttribute("message","Deleted Successfully !!");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/FlightView/FindFlight.jsp");
+			dispatcher.forward(request, response);
+		}
+		
+		else
+		{
+			request.setAttribute("message","Invalid Flight, Try Again !!");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/FlightView/FindFlight.jsp");
+			dispatcher.forward(request, response);
+		}
+	
 	}
 
 }

@@ -101,6 +101,7 @@
 			
 			<label>Date of Birth</label>
 			<select name="month" class="cjComboBox">
+					<option value=""></option>
 					<option value="Jan">January</option>
 					<option value="Feb">Febraury</option>
 					<option value="Mar">March</option>
@@ -116,6 +117,7 @@
 			</select>
 			
 			<select name="day" class="cjComboBox">
+					<option value=""></option>
 					<option value="01">1</option>
 					<option value="02">2</option>
 					<option value="03">3</option>
@@ -150,6 +152,7 @@
 			</select>
 			
 			<select name="year" class="cjComboBox">
+					<option value=""></option>
 					<option value="1945">1945</option>
 					<option value="1946">1946</option>
 					<option value="1947">1947</option>
@@ -192,6 +195,7 @@
 			
 			<label>Hire Date</label>
 			<select name="month_of_hiring" class="cjComboBox">
+					<option value=""></option>
 					<option value="Jan">January</option>
 					<option value="Feb">Febraury</option>
 					<option value="Mar">March</option>
@@ -241,6 +245,7 @@
 			</select>
 			
 			<select name="year_of_hiring" class="cjComboBox">
+					<option value=""></option>
 					<option value="1988">1988</option>
 					<option value="1989">1989</option>
 					<option value="1990">1990</option>
@@ -271,9 +276,8 @@
 			
 			
 			<label>Email Id</label>
-			<input type="text"  tabindex="2" required name="emailId">
-			<label>Password</label>
-			<input type="password"  tabindex="2" required name="password">
+			<input type="text"  tabindex="2" name="emailId">
+			
 		</fieldset>
 		
 		<footer>

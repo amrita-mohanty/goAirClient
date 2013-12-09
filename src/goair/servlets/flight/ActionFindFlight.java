@@ -61,16 +61,59 @@ public class ActionFindFlight extends HttpServlet {
 		String destination = request.getParameter("destination");
 		String deptTime = request.getParameter("departureTime");
 		String arrivalTime = request.getParameter("arrivalTime");
-		//String startDate = request.getParameter("flyingStartDate");
-		//String endDate = request.getParameter("flyingEndDate");
+		
+		String startDate = request.getParameter("flyingStartDate");
+		String endDate = request.getParameter("flyingEndDate");
+		
 		String flighStatus = request.getParameter("flightStatus");
 		String totalSeats = request.getParameter("totalSeats");
 		String dayOfWeek = request.getParameter("dayofweek"); 
+		String flyingdate = request.getParameter("flydate");
 		
 		Flight flight = new Flight();
+       Flight objFlight1 = new Flight();
+       
+       Calendar arrivt = Calendar.getInstance();
+       Calendar departuret = Calendar.getInstance();
+		SimpleDateFormat sd = new SimpleDateFormat("E MMM HH:MM:SS Z YYYY");
+		try {
+			arrivt.setTime(sd.parse(arrivalTime));
+			arrivt.setTime(sd.parse(deptTime));
+			
+			
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} 
 		
-		/*Calendar newStartDate = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("mm/dd/yyyy");
+		 int hour=arrivt.get(Calendar.HOUR);
+	     int min=arrivt.get(Calendar.MINUTE);
+	     int sec=arrivt.get(Calendar.SECOND);
+	     
+
+		 int dhour=arrivt.get(Calendar.HOUR);
+	     int dmin=arrivt.get(Calendar.MINUTE);
+	     int dsec=arrivt.get(Calendar.SECOND);
+	     
+	     String ArrivalTime = hour+":"+min+":"+sec;
+	     
+	     String DepartureTime = dhour+":"+dmin+":"+dsec;
+       
+       
+		/*System.out.println("In servelet"+flyingdate);
+		Calendar newFlyDate = Calendar.getInstance();
+		SimpleDateFormat sdf6 = new SimpleDateFormat("E MMM HH:MM:SS Z YYYY");
+		try {
+			newFlyDate.setTime(sdf6.parse(flyingdate));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("In JSP"+ newFlyDate);*/
+		
+		int cFligtId = Integer.parseInt(flightId);
+		
+		Calendar newStartDate = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("E MMM HH:MM:SS Z YYYY");
 		try {
 		 newStartDate.setTime(sdf.parse(startDate));
 		}
@@ -81,7 +124,7 @@ public class ActionFindFlight extends HttpServlet {
 
 		
 		Calendar newEndDate = Calendar.getInstance();
-		SimpleDateFormat sdf1 = new SimpleDateFormat("mm/dd/yyyy");
+		SimpleDateFormat sdf1 = new SimpleDateFormat("E MMM HH:MM:SS Z YYYY");
 		try {
 			newEndDate.setTime(sdf1.parse(endDate));
 		}
@@ -91,7 +134,7 @@ public class ActionFindFlight extends HttpServlet {
 		}
 		
 	
-		Calendar newDeptTime= Calendar.getInstance();
+	/*	Calendar newDeptTime= Calendar.getInstance();
 		SimpleDateFormat sdf2 = new SimpleDateFormat("mm/dd/yyyyHH:mm:ss");
 		try {
 			newDeptTime.setTime(sdf2.parse(startDate+deptTime));
@@ -99,10 +142,10 @@ public class ActionFindFlight extends HttpServlet {
 		
 		catch (ParseException e) {
 			e.printStackTrace();
-		}
+		}*/
 		
 		
-		
+		/*
 		Calendar newArrivalTime= Calendar.getInstance();
 		SimpleDateFormat sdf3 = new SimpleDateFormat("mm/dd/yyyyHH:mm:ss");
 		try {
@@ -111,9 +154,9 @@ public class ActionFindFlight extends HttpServlet {
 		
 		catch (ParseException e) {
 			e.printStackTrace();
-		}
+		}*/
 		
-			*/
+			
 	   flight.setAirlineName(airlinename);
 	   //flight.setArrivalTime(newArrivalTime);
 	   flight.setDaysOfWeek(dayOfWeek);
@@ -132,6 +175,11 @@ public class ActionFindFlight extends HttpServlet {
 	   
 	   String buttonPress = request.getParameter("actionFlight");
 		request.setAttribute("flight",flight);
+		request.setAttribute("startDate",startDate);
+		request.setAttribute("endDate",endDate);
+		request.setAttribute("ArrivalTime",ArrivalTime);
+		request.setAttribute("DepartureTime",DepartureTime);
+		
 
 		if(buttonPress.contains("Update"))
 		{
@@ -142,11 +190,41 @@ public class ActionFindFlight extends HttpServlet {
 		if(buttonPress.contains("Delete"))
 		{
 			
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/FlightView/deleteFlight");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/FlightView/DeleteFlight");
 			dispatcher.forward(request, response);
 		}
 		
-		  int cFligtId = Integer.parseInt(flightId);
+		if(buttonPress.contains("View Passengers"))
+		{
+          
+			Customer [] result = adminProxy.getCustomersForFlight(cFligtId);
+			request.setAttribute("customers",result );
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/CustomerView/viewAllCustomers.jsp");
+			dispatcher.forward(request, response);
+		}
+		
+		if(buttonPress.contains("View Crew Details"))
+		{
+          
+			Employee [] result = adminProxy.getEmpployeesForFlight(cFligtId);
+			request.setAttribute("employees",result );
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/EmployeeView/viewAllEmployees.jsp");
+			dispatcher.forward(request, response);
+		}
+		
+		if(buttonPress.contains("Reserve"))
+		{
+          
+			Customer customer = (Customer) session.getAttribute("customer");
+			request.setAttribute("customerId",customer.getCustomerId() );
+			request.setAttribute("flightId",cFligtId );
+			request.setAttribute("flyingdate",flyingdate );
+			
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/ReservationView/createReservation.jsp");
+			dispatcher.forward(request, response);
+		}
+		
+		  cFligtId = Integer.parseInt(flightId);
 		  if(buttonPress.contains("View Passengers"))
 		                 {
 		           

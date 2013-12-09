@@ -21,6 +21,12 @@
 					<c:out value="Welcome, ${user.firstName}"></c:out>
 				</h3> </c:if>
 		   </li>
+		   
+		   <li>
+			<h3>Home Page</h3>
+			<p>
+			<a href="../GeneralView/welcome.jsp">Edit Profile</a>
+			</p></li>
 			
 				
 		<c:if test ='<%=role.equalsIgnoreCase("Customer") %>'>
@@ -45,6 +51,8 @@
 			<p>
 			<a href="../ReservationView/createReservation.jsp">Create Reservation</a>
 			</p></li>
+			
+			
 
 		</c:if>	
 		
@@ -109,7 +117,7 @@
 			<li>
 			<h3>Update Customer</h3>
 			<p>
-			<a href="../EmployeeView/updateCustomer.jsp">Update Employee</a>
+			<a href="../EmployeeView/updateCustomer.jsp">Update Customer</a>
 			</p></li>
 	
 		   <li>
@@ -146,7 +154,7 @@
 			<li>
 			<h3>Cancel Reservation</h3>
 			<p>
-			<a href="../ReservationView/deleteReservation.jsp">View All Reservations</a>
+			<a href="../ReservationView/cancelReservation.jsp">Cancel Reservations</a>
 			</p></li>
 
 		</c:if>
@@ -175,13 +183,13 @@
 			<li>
 			<h3>Delete Customer</h3>
 			<p>
-			<a href="../CustomerView/deleteCustomer.jsp">Delete Employee</a>
+			<a href="../CustomerView/deleteCustomer.jsp">Delete Customer</a>
 			</p></li>
 			
 			<li>
 			<h3>Update Customer</h3>
 			<p>
-			<a href="../EmployeeView/updateCustomer.jsp">Update Employee</a>
+			<a href="../EmployeeView/updateCustomer.jsp">Update Customer</a>
 			</p></li>
 		   	<li>
 		   
@@ -215,11 +223,19 @@
 			<li>
 			<h3>Cancel Reservation</h3>
 			<p>
-			<a href="../ReservationView/deleteReservation.jsp">Cancel Reservations</a>
+			<a href="../ReservationView/cancelReservation.jsp">Cancel Reservations</a>
 			</p></li>
 			
 		
 		</c:if>	
+		
+		 
+		   <li>
+			<h3>Sign Out</h3>
+			<p>
+			<a href="../GeneralView/signOut">Edit Profile</a>
+			</p></li>
+			
 			
 	</ul>
 </body>

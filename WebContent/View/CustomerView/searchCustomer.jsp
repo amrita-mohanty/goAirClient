@@ -205,7 +205,7 @@
 			<label>Nationality</label> <input type="text" tabindex="1" name="nationality">
 		
 			<label>Email</label>
-			<input type="text"  tabindex="2" required name="email">
+			<input type="text"  tabindex="2" name="email">
 			
 		</fieldset>
 		

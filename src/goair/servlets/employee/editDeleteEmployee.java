@@ -129,7 +129,7 @@ public class editDeleteEmployee extends HttpServlet {
 		
 		
 		if(buttonPress.contains("Delete"))
-		{	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/EmployeeView/deleteEmployee.jsp");
+		{	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/View/EmployeeView/deleteemployee");
 			dispatcher.forward(request, response);
 		}
 

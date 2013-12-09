@@ -53,12 +53,13 @@ return false;
 </c:if>
 </div>	
 
+<c:if test ='<%=role.equalsIgnoreCase("Admin") %>'>
 <form class="box login" style="height: auto; top: 50%;" method="post" action="createReservation">
 		<h3>
 			<br> <label>Create Reservation!!</label>
 		</h3>
 		<fieldset class="boxBody">
-			<label>Customer Id</label> <input type="text" tabindex="1" name="customerId" value = "${fname}">	
+			<label>Customer Id</label> <input type="text" tabindex="1" name="customerId" value = "${customerId}">	
 			<label>Flight Id</label> <input type="text" tabindex="1" name="flightId">
 			<label>Number of seats to reserve</label><input type="text" tabindex="1" name="numberOfSeatsBooked">
 			<!-- <label>Date of Booking </label> <input type="text" tabindex="1" name="dateOfBooking" id="datepick"> -->
@@ -73,6 +74,64 @@ return false;
 		<!-- <input class="submit" type="submit" value="Submit" onclick="validate_creditcardnumber()" /> -->
 		</footer>
 		</form>
+</c:if>		
+
+
+<c:if test ='<%=role.equalsIgnoreCase("Employee") %>'>
+<form class="box login" style="height: auto; top: 50%;" method="post" action="createReservation">
+		<h3>
+			<br> <label>Create Reservation!!</label>
+		</h3>
+		<fieldset class="boxBody">
+			<label>Customer Id</label> <input type="text" tabindex="1" name="customerId" value = "${customerId}">	
+			<label>Flight Id</label> <input type="text" tabindex="1" name="flightId">
+			<label>Number of seats to reserve</label><input type="text" tabindex="1" name="numberOfSeatsBooked">
+			<!-- <label>Date of Booking </label> <input type="text" tabindex="1" name="dateOfBooking" id="datepick"> -->
+			<label>Date of Flying </label> <input type="text" tabindex="1" name="dateOfFlying" id="datepick2">
+			<!-- <label>Credit Card Number</label> <input type="text" tabindex="1" name="creditCardNumber">
+			<label>Total Price</label> <input type="text" tabindex="1" name="totalPrice">
+			 -->		
+		</fieldset>
+		<footer>
+		<br>
+		<input type="submit" class="btnLogin" value="Submit" tabindex="3">
+		<!-- <input class="submit" type="submit" value="Submit" onclick="validate_creditcardnumber()" /> -->
+		</footer>
+		</form>
+</c:if>	
+
+<c:if test ='<%=role.equalsIgnoreCase("Customer") %>'>
+<form class="box login" style="height: auto; top: 50%;" method="post" action="createReservation">
+		<h3>
+			<br> <label>Create Reservation!!</label>
+		</h3>
+		<fieldset class="boxBody">
+			<label>Customer Id</label> <c:out value = "${customerId}"/>
+			
+			<input type="hidden" tabindex="1" name="customerId" value = "${customerId}">	
+			<label>Flight Id</label> <c:out value = "${flightId}"/>
+			
+			<input type="text" tabindex="1" name="flightId">
+			<label>Number of seats to reserve</label><input type="text" tabindex="1" name="numberOfSeatsBooked">
+			<!-- <label>Date of Booking </label> <input type="text" tabindex="1" name="dateOfBooking" id="datepick"> -->
+			<label>Date of Flying </label> 
+			
+			<input value = "${flyingdate}" type="text" tabindex="1" name="dateOfFlying" id="datepick2">
+			<!-- <label>Credit Card Number</label> <input type="text" tabindex="1" name="creditCardNumber">
+			<label>Total Price</label> <input type="text" tabindex="1" name="totalPrice">
+			 -->		
+		</fieldset>
+		<footer>
+		<br>
+		<input type="submit" class="btnLogin" value="Submit" tabindex="3">
+		<!-- <input class="submit" type="submit" value="Submit" onclick="validate_creditcardnumber()" /> -->
+		</footer>
+		</form>
+</c:if>	
+
+
+		
+		
 		</div>
 		</div>
 </body>

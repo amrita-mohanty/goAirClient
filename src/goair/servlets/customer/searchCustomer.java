@@ -72,21 +72,21 @@ public class searchCustomer extends HttpServlet {
 		} 
 	
 		
+		SearchParametersForCustomers searchParameters = new SearchParametersForCustomers();
 		
-		Customer customer = new Customer();
-		customer.setCustomerId(customerId);
-		customer.setFirstName(fname);
-		customer.setLastName(lname);
-		customer.setGender(gender);
-		customer.setAddress(address);
-		customer.setCity(city);
-		customer.setState(state);
-		customer.setZipcode(zipcode);
-		customer.setDob(dob);
-		customer.setPassportNum(passportNum);
-		customer.setEmailId(emailId);
-		customer.setPassword(password);
-		customer.setNationality(nationality);
+		searchParameters.setCustomerId(customerId);
+		searchParameters.setFirstName(fname);
+		searchParameters.setLastName(lname);
+		searchParameters.setGender(gender);
+		searchParameters.setAddress(address);
+		searchParameters.setCity(city);
+		searchParameters.setState(state);
+		searchParameters.setZipcode(zipcode);
+		searchParameters.setDob(dob);
+		searchParameters.setPassportNum(passportNum);
+		searchParameters.setEmailId(emailId);
+		searchParameters.setPassword(password);
+		searchParameters.setNationality(nationality);
 		
 		
 		PrintWriter out = response.getWriter();	
@@ -95,9 +95,9 @@ public class searchCustomer extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		String role = (String) session.getAttribute("role");
 		
-		SearchParametersForCustomers searchParameters = null;
 		
 		
+	
 		Customer[] result = adminProxy.searchCustomersForAdmin(searchParameters);
 		 request.setAttribute("customers",result );
 	        
